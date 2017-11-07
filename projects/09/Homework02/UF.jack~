@@ -1,0 +1,9 @@
+class UF {
+      field int[] d;
+      field int[] count;
+      constructor UF new(int N){
+      		  let count = N;
+		  id = Array.new(N);
+      }
+
+}

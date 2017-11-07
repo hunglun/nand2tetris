@@ -1,0 +1,27 @@
+class Main{
+      function void main(){
+      	       var int N;
+	       var UF uf;
+	       var int p,q;
+	       var int continue;
+	       let N = Keyboard.readInt("Number of sites:");
+ 	       let uf = UF.new(N);
+	       let continue = 1;
+	       while(continue = 1) {
+	       	      let p = Keyboard.readInt("Key in a site:");
+	       	      let q = Keyboard.readInt("Key in another site:");
+		      if(uf.connected(p,q)){
+		        // do nothing
+		      }else{
+			do uf.union(p,q);
+			do Output.printInt(p);
+			do Output.printString(" ");
+			do Output.printInt(q);
+		      }
+		      let continue = Keyboard.readInt("Continue? 0 for No, 1 for yes");
+	       }
+	       do Output.printInt(uf.count());
+	       do Output.printString(" components");
+	       return;
+      }
+}

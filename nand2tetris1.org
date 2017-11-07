@@ -1,0 +1,7 @@
+* Knowledge
+** [2017-09-19 Tue]
+- [[/Users/hl/stories/B1505767044/layers.png]]
+- [[/Users/hl/stories/B1505767044/lessonplan.png]]
+- HDL is a formalism, understood by hardware simulator for defining and testing chips.
+* Open Items
+** [2017-09-19 Tue]

@@ -1,0 +1,8236 @@
+(Main.main)
+@5
+D=A
+@5
+M=D
+@Main.main$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(Main.main$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@Main.main$WRITE_FUNCTION_INITIALISE
+D;JGT
+@5
+D=A
+@SP
+M=M+D
+(Main.main$WRITE_FUNCTION_INITIALISE_END) //Function Main.main 5
+@16
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 16
+@String.new$retAddr0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr0) // call String.new 1
+@78
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 78
+@String.appendChar$retAddr1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr1) // call String.appendChar 2
+@117
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 117
+@String.appendChar$retAddr2
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr2) // call String.appendChar 2
+@109
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 109
+@String.appendChar$retAddr3
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr3) // call String.appendChar 2
+@98
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 98
+@String.appendChar$retAddr4
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr4) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr5
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr5) // call String.appendChar 2
+@114
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 114
+@String.appendChar$retAddr6
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr6) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr7
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr7) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr8
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr8) // call String.appendChar 2
+@102
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 102
+@String.appendChar$retAddr9
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr9) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr10
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr10) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr11
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr11) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr12
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr12) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr13
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr13) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr14
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr14) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr15
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr15) // call String.appendChar 2
+@58
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 58
+@String.appendChar$retAddr16
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr16) // call String.appendChar 2
+@Keyboard.readInt$retAddr17
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Keyboard.readInt
+0;JMP
+(Keyboard.readInt$retAddr17) // call Keyboard.readInt 1
+@0
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 0
+@1
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 0
+@UF.new$retAddr18
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.new
+0;JMP
+(UF.new$retAddr18) // call UF.new 1
+@1
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 1
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@4
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 4
+(WHILE_EXP0)
+@1
+D=M
+@4
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 4
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE20
+D;JEQ
+@SP
+A=M-1
+M=0
+@ADJUSTSP20
+0;JMP
+(TRUE20)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP20) // eq
+@SP
+A=M-1
+M=!M // not
+@SP
+M=M-1
+A=M
+D=M
+@WHILE_END0
+D;JNE //IfGoto WHILE_END0
+@14
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 14
+@String.new$retAddr21
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr21) // call String.new 1
+@75
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 75
+@String.appendChar$retAddr22
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr22) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr23
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr23) // call String.appendChar 2
+@121
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 121
+@String.appendChar$retAddr24
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr24) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr25
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr25) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr26
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr26) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr27
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr27) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr28
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr28) // call String.appendChar 2
+@97
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 97
+@String.appendChar$retAddr29
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr29) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr30
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr30) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr31
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr31) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr32) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr33
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr33) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr34
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr34) // call String.appendChar 2
+@58
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 58
+@String.appendChar$retAddr35
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr35) // call String.appendChar 2
+@Keyboard.readInt$retAddr36
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Keyboard.readInt
+0;JMP
+(Keyboard.readInt$retAddr36) // call Keyboard.readInt 1
+@2
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 2
+@20
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 20
+@String.new$retAddr37
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr37) // call String.new 1
+@75
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 75
+@String.appendChar$retAddr38
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr38) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr39
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr39) // call String.appendChar 2
+@121
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 121
+@String.appendChar$retAddr40
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr40) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr41
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr41) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr42
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr42) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr43
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr43) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr44
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr44) // call String.appendChar 2
+@97
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 97
+@String.appendChar$retAddr45
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr45) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr46
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr46) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr47
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr47) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr48
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr48) // call String.appendChar 2
+@104
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 104
+@String.appendChar$retAddr49
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr49) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr50
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr50) // call String.appendChar 2
+@114
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 114
+@String.appendChar$retAddr51
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr51) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr52
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr52) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr53
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr53) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr54
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr54) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr55
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr55) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr56
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr56) // call String.appendChar 2
+@58
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 58
+@String.appendChar$retAddr57
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr57) // call String.appendChar 2
+@Keyboard.readInt$retAddr58
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Keyboard.readInt
+0;JMP
+(Keyboard.readInt$retAddr58) // call Keyboard.readInt 1
+@3
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 3
+@1
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 1
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@1
+D=M
+@3
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 3
+@UF.connected$retAddr59
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@3
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.connected
+0;JMP
+(UF.connected$retAddr59) // call UF.connected 3
+@SP
+M=M-1
+A=M
+D=M
+@IF_TRUE0
+D;JNE //IfGoto IF_TRUE0
+@IF_FALSE0
+0;JMP //Goto IF_FALSE0
+(IF_TRUE0)
+@IF_END0
+0;JMP //Goto IF_END0
+(IF_FALSE0)
+@1
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 1
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@1
+D=M
+@3
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 3
+@UF.union$retAddr60
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@3
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.union
+0;JMP
+(UF.union$retAddr60) // call UF.union 3
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@Output.printInt$retAddr61
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Output.printInt
+0;JMP
+(Output.printInt$retAddr61) // call Output.printInt 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@String.new$retAddr62
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr62) // call String.new 1
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr63
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr63) // call String.appendChar 2
+@Output.printString$retAddr64
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Output.printString
+0;JMP
+(Output.printString$retAddr64) // call Output.printString 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@1
+D=M
+@3
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 3
+@Output.printInt$retAddr65
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Output.printInt
+0;JMP
+(Output.printInt$retAddr65) // call Output.printInt 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+(IF_END0)
+@29
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 29
+@String.new$retAddr66
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr66) // call String.new 1
+@67
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 67
+@String.appendChar$retAddr67
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr67) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr68
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr68) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr69
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr69) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr70
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr70) // call String.appendChar 2
+@105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 105
+@String.appendChar$retAddr71
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr71) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr72
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr72) // call String.appendChar 2
+@117
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 117
+@String.appendChar$retAddr73
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr73) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr74
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr74) // call String.appendChar 2
+@63
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 63
+@String.appendChar$retAddr75
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr75) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr76
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr76) // call String.appendChar 2
+@48
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 48
+@String.appendChar$retAddr77
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr77) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr78
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr78) // call String.appendChar 2
+@102
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 102
+@String.appendChar$retAddr79
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr79) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr80
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr80) // call String.appendChar 2
+@114
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 114
+@String.appendChar$retAddr81
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr81) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr82
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr82) // call String.appendChar 2
+@78
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 78
+@String.appendChar$retAddr83
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr83) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr84
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr84) // call String.appendChar 2
+@44
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 44
+@String.appendChar$retAddr85
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr85) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr86
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr86) // call String.appendChar 2
+@49
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 49
+@String.appendChar$retAddr87
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr87) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr88
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr88) // call String.appendChar 2
+@102
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 102
+@String.appendChar$retAddr89
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr89) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr90
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr90) // call String.appendChar 2
+@114
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 114
+@String.appendChar$retAddr91
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr91) // call String.appendChar 2
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr92
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr92) // call String.appendChar 2
+@121
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 121
+@String.appendChar$retAddr93
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr93) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr94
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr94) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr95
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr95) // call String.appendChar 2
+@Keyboard.readInt$retAddr96
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Keyboard.readInt
+0;JMP
+(Keyboard.readInt$retAddr96) // call Keyboard.readInt 1
+@4
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 4
+@WHILE_EXP0
+0;JMP //Goto WHILE_EXP0
+(WHILE_END0)
+@1
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 1
+@UF.count$retAddr97
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.count
+0;JMP
+(UF.count$retAddr97) // call UF.count 1
+@Output.printInt$retAddr98
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Output.printInt
+0;JMP
+(Output.printInt$retAddr98) // call Output.printInt 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@11
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 11
+@String.new$retAddr99
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.new
+0;JMP
+(String.new$retAddr99) // call String.new 1
+@32
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 32
+@String.appendChar$retAddr100
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr100) // call String.appendChar 2
+@99
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 99
+@String.appendChar$retAddr101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr101) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr102
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr102) // call String.appendChar 2
+@109
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 109
+@String.appendChar$retAddr103
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr103) // call String.appendChar 2
+@112
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 112
+@String.appendChar$retAddr104
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr104) // call String.appendChar 2
+@111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 111
+@String.appendChar$retAddr105
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr105) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr106
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr106) // call String.appendChar 2
+@101
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 101
+@String.appendChar$retAddr107
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr107) // call String.appendChar 2
+@110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 110
+@String.appendChar$retAddr108
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr108) // call String.appendChar 2
+@116
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 116
+@String.appendChar$retAddr109
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr109) // call String.appendChar 2
+@115
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 115
+@String.appendChar$retAddr110
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@String.appendChar
+0;JMP
+(String.appendChar$retAddr110) // call String.appendChar 2
+@Output.printString$retAddr111
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Output.printString
+0;JMP
+(Output.printString$retAddr111) // call Output.printString 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 0
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(UF.new)
+@0
+D=A
+@5
+M=D
+@UF.new$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(UF.new$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@UF.new$WRITE_FUNCTION_INITIALISE
+D;JGT
+@0
+D=A
+@SP
+M=M+D
+(UF.new$WRITE_FUNCTION_INITIALISE_END) //Function UF.new 0
+@3
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 3
+@Memory.alloc$retAddr112
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Memory.alloc
+0;JMP
+(Memory.alloc$retAddr112) // call Memory.alloc 1
+@3
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@1
+D=A
+@3
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 this 1
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@2
+D=A
+@3
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 this 2
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@Array.new$retAddr113
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@1
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@Array.new
+0;JMP
+(Array.new$retAddr113) // call Array.new 1
+@0
+D=A
+@3
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 this 0
+(WHILE_EXP0)
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE115
+D;JGT
+@SP
+A=M-1
+M=0
+@ADJUSTSP115
+0;JMP
+(TRUE115)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP115) // gt
+@SP
+A=M-1
+M=!M // not
+@SP
+M=M-1
+A=M
+D=M
+@WHILE_END0
+D;JNE //IfGoto WHILE_END0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+A=A-1
+M=D //sub
+@0
+D=A
+@2
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 argument 0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@3
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D+M
+A=A-1
+M=D //add
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@4
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 1
+@5
+D=A
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 temp 0
+@0
+D=A
+@4
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 that 0
+@WHILE_EXP0
+0;JMP //Goto WHILE_EXP0
+(WHILE_END0)
+@3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 pointer 0
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(UF.count)
+@0
+D=A
+@5
+M=D
+@UF.count$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(UF.count$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@UF.count$WRITE_FUNCTION_INITIALISE
+D;JGT
+@0
+D=A
+@SP
+M=M+D
+(UF.count$WRITE_FUNCTION_INITIALISE_END) //Function UF.count 0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@3
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 0
+@3
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 1
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(UF.connected)
+@0
+D=A
+@5
+M=D
+@UF.connected$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(UF.connected$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@UF.connected$WRITE_FUNCTION_INITIALISE
+D;JGT
+@0
+D=A
+@SP
+M=M+D
+(UF.connected$WRITE_FUNCTION_INITIALISE_END) //Function UF.connected 0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@3
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 0
+@3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 pointer 0
+@2
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 1
+@UF.find$retAddr118
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.find
+0;JMP
+(UF.find$retAddr118) // call UF.find 2
+@3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 pointer 0
+@2
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 2
+@UF.find$retAddr119
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.find
+0;JMP
+(UF.find$retAddr119) // call UF.find 2
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE121
+D;JEQ
+@SP
+A=M-1
+M=0
+@ADJUSTSP121
+0;JMP
+(TRUE121)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP121) // eq
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(UF.find)
+@0
+D=A
+@5
+M=D
+@UF.find$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(UF.find$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@UF.find$WRITE_FUNCTION_INITIALISE
+D;JGT
+@0
+D=A
+@SP
+M=M+D
+(UF.find$WRITE_FUNCTION_INITIALISE_END) //Function UF.find 0
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@3
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 0
+@2
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 1
+@3
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D+M
+A=A-1
+M=D //add
+@4
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 1
+@4
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 that 0
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(UF.union)
+@3
+D=A
+@5
+M=D
+@UF.union$WRITE_FUNCTION_INITIALISE_END
+D;JEQ
+(UF.union$WRITE_FUNCTION_INITIALISE)
+@5
+M=M-1
+D=M
+@SP
+A=M+D
+M=0
+@UF.union$WRITE_FUNCTION_INITIALISE
+D;JGT
+@3
+D=A
+@SP
+M=M+D
+(UF.union$WRITE_FUNCTION_INITIALISE_END) //Function UF.union 3
+@2
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 0
+@3
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 0
+@3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 pointer 0
+@2
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 1
+@UF.find$retAddr122
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.find
+0;JMP
+(UF.find$retAddr122) // call UF.find 2
+@0
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 0
+@3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 pointer 0
+@2
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 argument 2
+@UF.find$retAddr123
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //push return address
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push LCL
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push ARG
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THIS
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 // push THAT
+@2
+D=A
+@5
+D=A+D
+@SP
+D=M-D
+@ARG
+M=D // ARG=SP-n-5
+@SP
+D=M
+@LCL
+M=D // LCL = SP
+@UF.find
+0;JMP
+(UF.find$retAddr123) // call UF.find 2
+@1
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 1
+@1
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 0
+@1
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 1
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE125
+D;JEQ
+@SP
+A=M-1
+M=0
+@ADJUSTSP125
+0;JMP
+(TRUE125)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP125) // eq
+@SP
+M=M-1
+A=M
+D=M
+@IF_TRUE0
+D;JNE //IfGoto IF_TRUE0
+@IF_FALSE0
+0;JMP //Goto IF_FALSE0
+(IF_TRUE0)
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 0
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)
+(IF_FALSE0)
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 0
+@2
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 2
+(WHILE_EXP0)
+@3
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 2
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE126
+D;JGT
+@SP
+A=M-1
+M=0
+@ADJUSTSP126
+0;JMP
+(TRUE126)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP126) // gt
+@SP
+A=M-1
+M=!M // not
+@SP
+M=M-1
+A=M
+D=M
+@WHILE_END0
+D;JNE //IfGoto WHILE_END0
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@3
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D+M
+A=A-1
+M=D //add
+@4
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 1
+@4
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 that 0
+@1
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+@TRUE129
+D;JEQ
+@SP
+A=M-1
+M=0
+@ADJUSTSP129
+0;JMP
+(TRUE129)
+@SP
+A=M-1
+M=-1
+(ADJUSTSP129) // eq
+@SP
+M=M-1
+A=M
+D=M
+@IF_TRUE1
+D;JNE //IfGoto IF_TRUE1
+@IF_FALSE1
+0;JMP //Goto IF_FALSE1
+(IF_TRUE1)
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@3
+D=M
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 0
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D+M
+A=A-1
+M=D //add
+@1
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 1
+@0
+D=A
+@5
+D=A+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 temp 0
+@4
+D=A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 pointer 1
+@5
+D=A
+@0
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 temp 0
+@0
+D=A
+@4
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 that 0
+(IF_FALSE1)
+@1
+D=M
+@2
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 local 2
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D+M
+A=A-1
+M=D //add
+@2
+D=A
+@1
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 local 2
+@WHILE_EXP0
+0;JMP //Goto WHILE_EXP0
+(WHILE_END0)
+@3
+D=M
+@1
+A=A+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 this 1
+@1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 1
+@SP
+M=M-1
+A=M-1
+D=M
+A=A+1
+D=D-M
+A=A-1
+M=D //sub
+@1
+D=A
+@3
+D=M+D
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D //2 this 1
+@0
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1 //1 constant 0
+@LCL
+D=M
+@8
+M=D //FRAME = LCL
+@5
+D=A
+@8
+A=M
+A=A-D
+D=M
+@7
+M=D // RET = *(FRAME - 5)
+@SP
+M=M-1
+A=M
+D=M
+@ARG
+A=M
+M=D //*ARG=pop()
+D=A
+@SP
+M=D+1 //SP=ARG+1
+@LCL
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THAT
+M=D // THAT = *(FRAME-1)
+@ARG
+D=A
+@8
+A=M
+A=A-D
+D=M
+@THIS
+M=D // THIS = *(FRAME-2)
+@THIS
+D=A
+@8
+A=M
+A=A-D
+D=M
+@ARG
+M=D // ARG = *(FRAME-3)
+@THAT
+D=A
+@8
+A=M
+A=A-D
+D=M
+@LCL
+M=D // LCL = *(FRAME-4)
+@7
+A=M
+0;JMP //return to *(Frame-5)

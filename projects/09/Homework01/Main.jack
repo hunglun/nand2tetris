@@ -1,0 +1,23 @@
+class Main {
+      function void main() {
+      	       // expense
+	       // monthly savings
+	       // current total savings
+	       // life expectancy
+	       // output: remaining compulsory working time
+	       var int x;
+	       var int s;
+	       var int l;
+	       var int t;
+	       var int w;
+	       let x=Keyboard.readInt("Monthly Expense (in $100):");
+ 	       let s=Keyboard.readInt("Monthly Savings:");
+ 	       let l=Keyboard.readInt("Current Total Savings:");
+ 	       let t=Keyboard.readInt("Life Expectancy in months:");
+	       let w = (( t * x ) - l) / ( x + s );
+	       do Output.printString("You need to work for ");
+ 	       do Output.printInt(w);
+ 	       do Output.printString(" more months.");
+	       return;
+      }
+}

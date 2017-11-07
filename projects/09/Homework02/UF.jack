@@ -1,0 +1,43 @@
+class UF {
+      field Array id;
+      field int count;
+      field int arraySize;
+      constructor UF new(int N){
+      		  let count = N;
+		  let arraySize = N;
+		  let id = Array.new(N);
+		  while(N > 0){
+ 		  	  let N = N - 1;
+		  	  let id[N] = N;
+		  }
+		  return this;
+      }
+      method int count(){
+      	       return count;
+      }
+      method bool connected(int p, int q){
+      	     return (find(p) = find(q));
+      }
+      method int find(int p){
+      	       return id[p];
+      }
+      method void union(int p, int q){
+      	       var int pID;
+      	       var int qID;
+	       var int i;
+	       let pID = find(p);
+      	       let qID = find(q);
+	       if(pID = qID) {return;}
+
+	       let i = 0; 
+    	       while(arraySize > i){
+ 	         if (id[i] = pID) {
+		     let id[i] = qID;
+ 		  }
+		  let i = i + 1;
+ 	       }
+	       let count = count - 1;
+	       return;
+      }
+
+}

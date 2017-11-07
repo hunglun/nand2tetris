@@ -1,0 +1,21 @@
+class Main{
+      function void main(){
+      	       var int N = Keyboard.readInt("Number of sites:");
+	       var UF uf = UF.new(N);
+	       while(N > 0) {
+	       	      var int p = Keyboard.readInt("Key in a site:");
+	       	      var int q = Keyboard.readInt("Key in another site:");
+		      if(uf.connected(p,q)){
+		        // do nothing
+		      }else{
+			uf.union(p,q);
+			Output.printInt(p);
+			Output.printString(" ");
+			Output.printInt(q);
+		      }
+		      let N = N - 1;
+	       }
+	       Output.printInt(uf.count());
+	       Output.printString(" components");
+      }
+}

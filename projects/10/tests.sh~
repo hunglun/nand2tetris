@@ -1,0 +1,2 @@
+python JackAnalyzer.py ArrayTest/Main.jack 
+/Users/hl/nand2tetris/tools/TextComparer.sh ArrayTest/Main.T.xml ArrayTest/MainT.xml 

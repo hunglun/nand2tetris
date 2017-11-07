@@ -1,0 +1,11 @@
+# Thu Oct  5 21:52:59 +08 2017 - created
+
+class Parser:
+    pass
+class CodeWriter:
+    pass
+
+if __name__ = "__main__":
+    parser = new Parser()
+    codeWriter = new CodeWriter()
+    

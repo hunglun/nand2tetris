@@ -1,0 +1,862 @@
+<class>
+<keyword> class </keyword>
+<identifier> Main </identifier>['class', '', None, None]
+<symbol> { </symbol>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> main </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<identifier> Array </identifier>['class', '', None, None]
+<identifier> a </identifier>['var', '', 'defined', 0]
+<symbol> , </symbol>
+<identifier> b </identifier>['var', '', 'defined', 1]
+<symbol> , </symbol>
+<identifier> c </identifier>['var', '', 'defined', 2]
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 3]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Array </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> new </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 10 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> b </identifier>['var', '', 'Used', 4]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Array </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> new </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 5]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Array </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> new </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 6]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 7]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 8 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 8]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> b </identifier>['var', '', 'Used', 9]
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 10]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 11]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 12]
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> b </identifier>['var', '', 'used', 13]
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 14]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 15]
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 16]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+<symbol> * </symbol>
+<term>
+<identifier> b </identifier>['var', '', 'used', 17]
+<symbol> [ </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<integerConstant> 7 </integerConstant>
+</term>
+<symbol> - </symbol>
+<term>
+<identifier> a </identifier>['var', '', 'used', 18]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> - </symbol>
+<term>
+<identifier> Main </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> double </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 19]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<keyword> null </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 20]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> c </identifier>['var', '', 'used', 21]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printString </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<stringConstant> Test 1: expected result: 5; actual result:  </stringConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printInt </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> b </identifier>['var', '', 'used', 22]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> println </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printString </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<stringConstant> Test 2: expected result: 40; actual result:  </stringConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printInt </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 23]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> println </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printString </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<stringConstant> Test 3: expected result: 0; actual result:  </stringConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printInt </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> c </identifier>['var', '', 'used', 24]
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> println </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 25]
+<symbol> = </symbol>
+<expression>
+<term>
+<keyword> null </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> c </identifier>['var', '', 'used', 26]
+</term>
+<symbol> = </symbol>
+<term>
+<keyword> null </keyword>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Main </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> fill </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 27]
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 10 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 28]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 29]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 30]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 33 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 31]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 32]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 7 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> c </identifier>['var', '', 'Used', 33]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 77 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> b </identifier>['var', '', 'Used', 34]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 35]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> b </identifier>['var', '', 'Used', 36]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> b </identifier>['var', '', 'used', 37]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> c </identifier>['var', '', 'used', 38]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printString </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<stringConstant> Test 4: expected result: 77; actual result:  </stringConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printInt </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> c </identifier>['var', '', 'used', 39]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> println </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printString </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<stringConstant> Test 5: expected result: 110; actual result:  </stringConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> printInt </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<identifier> b </identifier>['var', '', 'used', 40]
+<symbol> [ </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ] </symbol>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> println </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> int </keyword>
+<identifier> double </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<identifier> a </identifier>['argument', '', 'defined', 0]
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<identifier> a </identifier>['var', '', 'used', 41]
+</term>
+<symbol> * </symbol>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> fill </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<parameterList>
+<identifier> Array </identifier>['class', '', None, None]
+<identifier> a </identifier>['argument', '', 'defined', 1]
+<symbol> , </symbol>
+<keyword> int </keyword>
+<identifier> size </identifier>['var', '', 'defined', 42]
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<identifier> size </identifier>['var', '', 'used', 43]
+</term>
+<symbol> &gt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> size </identifier>['var', '', 'Used', 44]
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> size </identifier>['var', '', 'used', 45]
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> a </identifier>['var', '', 'Used', 46]
+<symbol> [ </symbol>
+<expression>
+<term>
+<identifier> size </identifier>['var', '', 'used', 47]
+</term>
+</expression>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<expression>
+<term>
+<identifier> Array </identifier>['class', '', None, None]
+<symbol> . </symbol>
+<identifier> new </identifier>['subroutine', '', None, None]
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
+</class>

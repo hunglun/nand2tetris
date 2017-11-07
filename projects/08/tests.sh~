@@ -1,0 +1,2 @@
+python VMTranslator.py ProgramFlow/BasicLoop/BasicLoop.vm
+/Users/hl/nand2tetris/tools/CPUEmulator.sh ProgramFlow/BasicLoop/BasicLoop.tst
