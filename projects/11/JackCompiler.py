@@ -1,25 +1,138 @@
 # Fri Oct 27 04:27:04 +08 2017 use JackAnalyzer as baseline
 # Fri Oct 27 04:42:30 +08 2017 starting symbol table
+# Fri Nov 10 23:57:46 +08 2017 added type local for var declaration
+# Sat Nov 11 10:03:20 +08 2017 added type field, static and arg for var dec
+#                              added type info
+# Sat Nov 11 13:58:36 +08 2017 create and populate 2 symbol tables
+# Sat Nov 11 20:52:22 +08 2017 fix index in symbol table
+# Sat Nov 11 23:17:01 +08 2017 remove multi-line comments
+# Sun Nov 12 11:58:53 +08 2017 add getNVars function
+#                              add SymbolTable and VMWriter class skeletons
+# Sun Nov 12 14:22:48 +08 2017 implemented symbol table class
+#                              apply symbol table class and refactor
+# Mon Nov 13 08:23:32 +08 2017 implemented VMWriter
+# Mon Nov 13 22:16:52 +08 2017 apply VMWriter return
+# Thu Nov 16 01:41:12 +08 2017 apply writeArithmetic, writeCall
+# Fri Nov 17 22:12:41 +08 2017 apply writePush(CONST, *), writeCall(library_function, *)
+# Sat Nov 18 02:58:52 +08 2017 completed Seven
+# Sat Nov 18 22:31:53 +08 2017 store return function value in a variable
+# Sat Nov 18 23:46:04 +08 2017 every call add a return value to stack. pop temp 0 if return void
+# Sun Nov 19 00:58:30 +08 2017 push argument to stack
 
+
+# TODO:
+# - every compile ConvertToBin
 
 import sys,re,os,numbers
 
-RunningIndices ={
-    "var":-1,
-    "argument":-1,
-    "static":-1,
-    "field":-1,
-}
-STATUS = None
-def setStatus(value):
-    global STATUS
-    STATUS = value
+class Symboltable:
+    def __init__(self):
+        self.cls={}
+        self.subroutine={}
+        self.indices={
+            "STATIC":-1,
+            "FIELD":-1,
+            "ARG":-1,
+            "VAR":-1
+        }
+
+    def startSubroutine(self):
+        self.subroutine={}
+        self.indices["ARG"] = -1
+        self.indices["VAR"] = -1
+
+    def define(self, name, _type, kind):
+        assert kind in ["STATIC","FIELD","ARG","VAR"]
+        self.indices[kind] = self.indices[kind] + 1
+        index = self.indices[kind]
+        if kind in ["ARG","VAR"]:
+            self.subroutine[name]=[_type,kind,index]
+        else:
+            self.cls[name]=[_type,kind,index]
+    def varCount(self, kind):
+        assert kind in ["STATIC","FIELD","ARG","VAR"]
+        return self.indices[kind]+1
+
+    def _template(self,name, symtableindex):
+        if name in self.cls.keys():
+            return self.cls[name][symtableindex]
+        elif name in self.subroutine.keys():
+            return self.subroutine[name][symtableindex]
+        else:
+            return None
+
+    def typeOf(self, name):
+        return self._template(name,0)
+
+    def kindOf(self, name):
+        return self._template(name,1)
+
+    def indexOf(self, name):
+        return self._template(name,2)
+
+    def segmentOf(self, name):
+        _dict = {"VAR":"LOCAL","ARG":"ARG","STATIC":"STATIC","FIELD":"STATIC",None:None}
+        return _dict[self.kindOf(name)]
+
+class VMWriter:
+    def __init__(self, vmfile):
+        self.vmfile = open(vmfile,'w')
+
+    def writePush(self, segment, index):
+        _dict = {
+            "CONST": "constant",
+            "LOCAL" : "local",
+            "ARG": "arg",
+            "TEMP": "temp"
+        }
+        assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
+        code = "push %s %d\n" % (_dict[segment], index)
+        self.vmfile.write(code)
+
+    def writePop(self, segment, index):
+        assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
+        code = "pop %s %d\n" % (segment.lower(), index)
+        self.vmfile.write(code)
+        
+    def writeArithmetic(self, command):
+        assert command in ["ADD","SUB","AND","OR" ,"EQ" ,"GT" ,"LT" ,"NEG","NOT"]
+        code = command.lower() + "\n"
+        self.vmfile.write(code)
+
+    def writeLabel(self, label):
+        code = "label %s\n" % label
+        self.vmfile.write(code)
+        
+    def writeGoto(self, label):
+        code = "goto %s\n" % label
+        self.vmfile.write(code)
+        
+    def writeIf(self, label):
+        code = "if-goto %s\n" % label
+        self.vmfile.write(code)
+        
+    def writeCall(self, name, nArgs):
+        code = "call %s %d\n" % (name, nArgs)
+        self.vmfile.write(code)
+
+    def writeFunction(self, name,nLocals):
+        code = "function %s %d\n" % (name, nLocals)
+        self.vmfile.write(code)
+
+    def writeReturn(self):
+        self.vmfile.write("return\n")
+        
+    def close(self):
+        self.vmfile.close()
+
+def setCurrentScope(value):
+    global CURRENTSCOPE
+    CURRENTSCOPE = value
     return ""
-def getStatus():
-    return STATUS
-def getRunningIndex(category):
-    RunningIndices[category] = RunningIndices[category] + 1
-    return RunningIndices[category]
+
+def getCurrentScope():
+    return CURRENTSCOPE
+
 
 class Tokenizer:
     def __init__(self,filename):
@@ -29,6 +142,8 @@ class Tokenizer:
         for line in f.readlines():
             line = line.strip()
             if line == "" or line.startswith("//"):
+                continue
+            if  line.startswith("*") or line.startswith("/*"):
                 continue
             m=re.match(r"(.*?)//.*", line) or re.match(r"(.*?)/\**.*\*/", line)
             if m:
@@ -179,17 +294,41 @@ class CompilationEngine:
     def __init__(self, filename):
         self.filename = filename
         self.tn = Tokenizer(filename)
-        self.symtable = {}
+        self.symtable = Symboltable()
+        self.classname = ""
+        self.subroutine_name = ""
+        self.operators = []
+        self.operands = []
+        self.operators_table = {
+            "*" : ["Math.multiply",2],
+            "/" : ["Math.divide",2],
+            "+" : ["ADD"],
+            "-" : ["SUB"],
+            "&amp;" : ["AND"],
+            "|" : ["OR"],
+            "&lt;" : ["LT"],
+            "&gt;" : ["GT"],
+            "="  : ["EQ"],
+            "~"  : ["NOT"]
+        }
+        self.opsymbols = self.operators_table.keys()
     def generateXml(self):
+        self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
+
         outfilepath = self.filename.replace(".jack",".P.xml")
         f = open(outfilepath,'w')
         f.write(self.compileClass())
         f.close()
         print outfilepath,"is generated!"
+
+        self.vm.close()
+
     def compileClass(self):
         rs = "<class>\n"
-        rs = rs + self.compileterminal("keyword",["class"])
-        rs = rs + self.compileterminal("identifier",category="class")
+        rs = rs + self.compileterminal("keyword",["class",None])
+        rs = rs + self.compileterminal("identifier",declare=["class",None])
+        setCurrentScope(self.tn.token)
+        self.classname = self.tn.token
         rs = rs + self.compileterminal("symbol",["{"])
         # classVarDec*
         rs = rs + self.star(self.compileclassVarDec)
@@ -206,18 +345,20 @@ class CompilationEngine:
             return ""
 
         rs = rs + self.compileterminal("keyword",["static","field"])
+        kind = self.tn.token.upper()
         rs = rs + self.compiletype()
-        setStatus("defined")
-        rs = rs + self.compilevarName()
-        rs = rs + self.star(self.compilevarName,None,True)
-        setStatus(None)
+        _type = self.tn.token
+        declare=[kind,_type]
+        rs = rs + self.compilevarName(declare=declare)
+        rs = rs + self.star(self.compilevarName,None,True,declare)
         rs = rs + self.compileterminal("symbol",[";"])
         return "<classVarDec>\n" + rs + "</classVarDec>\n"
     def compiletype(self):
         rs = self.compileterminal("keyword",['int','char','boolean'])
         rs = rs or self.compileclassName()
 	return rs
-    def compileterminal(self, expectedType, tokenList=[],category="",type=""):
+
+    def compileterminal(self, expectedType, tokenList=[],declare=[]):
         tn = self.tn
         if not tn.lookahead(expectedType,tokenList):
             return ""
@@ -225,27 +366,40 @@ class CompilationEngine:
         if tokenList:
             assert(tn.token in tokenList)
 
-        syminfo = ""
+        if tn.tokenType == "integerConstant":
+            self.vm.writePush("CONST",int(tn.token))
+        
         if tn.tokenType == "identifier":
-            index = None
-            if category in ["var","argument","static","field"]:
-                index = getRunningIndex(category)
-            syminfo = [category,type,getStatus(),index]
-        return "<%s> %s </%s>%s\n" % (tn.tokenType,tn.token,tn.tokenType,syminfo)
+            if declare:
+                kind = declare[0]
+                _type = declare[1]
+                if kind in ["VAR","ARG","STATIC","FIELD"]:
+                    self.symtable.define(tn.token,_type,kind)
+            if declare and declare[0] == "subroutine":
+                name = getCurrentScope() + "." + tn.token
+                return "<%s> %s </%s>%s\n" % (tn.tokenType,tn.token,tn.tokenType,name)
+            
+        if expectedType == "keyword" and tn.token in ["constructor","function","method"]:
+            return "<%s> %s </%s>%s\n" % (tn.tokenType,tn.token,tn.tokenType,"function")
+        return "<%s> %s </%s>\n" % (tn.tokenType,tn.token,tn.tokenType)
         
     def compilesubroutineDec(self):
         rs = ""
         tn = self.tn
         if not tn.lookahead("keyword",["constructor","function","method"]):
             return ""
-        
+
+        self.symtable.startSubroutine()
+
         rs = "<subroutineDec>\n"
         rs = rs + self.compileterminal("keyword",["constructor","function","method"])
         if self.tn.lookahead("keyword",["void","int","char","boolean"]):
             rs = rs + self.compileterminal("keyword",["void","int","char","boolean"])
         else:
             rs = rs + self.compileclassName()
-        rs = rs + self.compileterminal("identifier",category="subroutine")
+        _type = self.tn.token
+        rs = rs + self.compileterminal("identifier",declare=["subroutine",_type])
+        self.subroutine_name = self.tn.token
         rs = rs + self.compileterminal("symbol",["("])
         rs = rs + self.compileparameterList()
         rs = rs + self.compileterminal("symbol",[")"])
@@ -256,29 +410,46 @@ class CompilationEngine:
     def compileparameterList(self):
         rs = ""
         rs = rs + self.compiletype()
-        setStatus("defined")
-        rs = rs + self.compileterminal("identifier",category="argument")
-        rs = rs + self.star(self.compiletype,self.compilevarName,True)
-        setStatus(None)
+        _type = self.tn.token
+        kind = "ARG"
+        declare = [kind,_type]
+        rs = rs + self.compileterminal("identifier",declare=declare)
+        rs = rs + self.star(self.compiletype,self.compilevarName,True,[],declare)
         return "<parameterList>\n" + rs + "</parameterList>\n"
 
-    def star(self,compiler1,compiler2=None,comma=False):
+    # TODO simplify this function
+    def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[]):
         rs = ""
         temp = ""
         if comma:
             temp = self.compileterminal("symbol",[","])
-        temp = temp + compiler1()
+        if declare1:
+            temp = temp + compiler1(declare=declare1)
+        else:
+            temp = temp + compiler1()
+
         if compiler2:
-            temp = temp + compiler2()
+            if declare2:
+                temp = temp + compiler2(declare=declare2)
+            else:
+                temp = temp + compiler2()
         while temp:
             rs = rs + temp
             if comma:
-                temp = self.compileterminal("symbol",[","]) + compiler1()
+                if declare1:
+                    temp = self.compileterminal("symbol",[","]) + compiler1(declare1)
+                else:
+                    temp = self.compileterminal("symbol",[","]) + compiler1()
             else:
-                temp = compiler1()
+                if declare1:
+                    temp = compiler1(declare1)
+                else:
+                    temp = compiler1()
             if compiler2:
-                temp = temp + compiler2()
-
+                if declare2:
+                    temp = temp + compiler2(declare2)
+                else:
+                    temp = temp + compiler2()
         return rs
 
     def compilesubroutineBody(self):
@@ -286,6 +457,8 @@ class CompilationEngine:
         rs = rs + self.compileterminal("symbol",["{"])
         # varDec*
         rs = rs + self.star(self.compilevarDec)
+        nlocals = self.symtable.varCount("VAR")
+        self.vm.writeFunction(self.classname + "." + self.subroutine_name, nlocals)
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
         rs = rs + "</subroutineBody>\n"
@@ -293,22 +466,24 @@ class CompilationEngine:
     def compilevarDec(self):
         if not self.tn.lookahead("keyword",["var"]):
             return ""
+        
         rs = "<varDec>\n"
         rs = rs + self.compileterminal("keyword",["var"])
         rs = rs + self.compiletype()
-        setStatus("defined")
-        rs = rs + self.compileterminal("identifier",category="var")
-        rs = rs + self.star(self.compilevarName,None,True)
-        setStatus(None)
+        _type = self.tn.token
+        kind = "VAR"
+        declare=[kind,_type]
+        rs = rs + self.compileterminal("identifier",declare)
+        rs = rs + self.star(self.compilevarName,None,True,declare)
         rs = rs + self.compileterminal("symbol",[";"])
         rs = rs + "</varDec>\n"
         return rs
     def compileclassName(self):
-	return self.compileterminal("identifier",category="class")
+	return self.compileterminal("identifier",declare=["class",None])
     def compilesubroutineName(self):
-        return self.compileterminal("identifier",category="subroutine")
-    def compilevarName(self):
-        return self.compileterminal("identifier",category="var")
+        return self.compileterminal("identifier")
+    def compilevarName(self, declare=[]):
+        return self.compileterminal("identifier",declare=declare)
     def compilestatements(self):
         return "<statements>\n" + self.star(self.compilestatement) + "</statements>\n"
 
@@ -318,9 +493,8 @@ class CompilationEngine:
         if not self.tn.lookahead("keyword",["let"]):
             return ""
         rs = self.compileterminal("keyword",["let"])
-        setStatus("Used")
         rs = rs + self.compilevarName()
-        setStatus(None)
+        varname = self.tn.token
         if self.tn.lookahead("symbol",["["]):
             rs = rs + self.compileterminal("symbol","[")
             rs = rs + self.compileexpression()
@@ -328,6 +502,7 @@ class CompilationEngine:
         rs = rs + self.compileterminal("symbol","=")
         rs = rs + self.compileexpression()
         rs = rs + self.compileterminal("symbol",";")
+        self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
 	return "<letStatement>\n" + rs + "</letStatement>\n"
     def compileifStatement(self):
         if not self.tn.lookahead("keyword",["if"]):
@@ -366,21 +541,35 @@ class CompilationEngine:
 	rs = self.compileterminal("keyword",["do"])
         rs = rs + self.compilesubroutineCall()
         rs = rs + self.compileterminal("symbol",[";"])
+        self.vm.writePop("TEMP",0)
         return  "<doStatement>\n" + rs + "</doStatement>\n"
     def compilereturnStatement(self):
         if not self.tn.lookahead("keyword",["return"]):
             return ""
-
 	rs = self.compileterminal("keyword",["return"])
+
+        if self.tn.lookahead("symbol",[";"]):
+            self.vm.writePush("CONST",0)
+
         rs = rs + self.compileexpression()
         rs = rs + self.compileterminal("symbol",[";"])
+
+        self.vm.writeReturn()
 
         return  "<returnStatement>\n" + rs + "</returnStatement>\n"
     def compileexpression(self):
         rs = self.compileterm()
-        opsymbols = "+ - * / &amp; | &lt; &gt; =".split(" ")
-        if self.tn.lookahead("symbol",opsymbols):
+        if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
+        self.operators.reverse()
+            
+        for f in self.operators:
+            if len(f) == 1:
+                self.vm.writeArithmetic(f[0])
+            else:
+                self.vm.writeCall(f[0],f[1])
+        self.operators = []
+
         if rs:
             return "<expression>\n" + rs + "</expression>\n"
         return ""
@@ -389,7 +578,7 @@ class CompilationEngine:
         rs = rs or self.compileterminal("stringConstant")
         rs = rs or self.compileterminal("keyword",["true","false","null","this"])
         if self.tn.lookahead2("symbol","["):
-            rs = rs or ( setStatus("used") + self.compilevarName() + setStatus(None)
+            rs = rs or ( self.compilevarName()
                         + self.compileterminal("symbol",["["])
                         + self.compileexpression()
                         + self.compileterminal("symbol",["]"]))
@@ -404,27 +593,49 @@ class CompilationEngine:
 
         rs = rs or self.compilesubroutineCall()
 
-        rs = rs or (setStatus("used") + self.compilevarName() + setStatus(None))
+        rs = rs or  self.compilevarName()
         if rs:
 	    return "<term>\n" + rs + "</term>\n"
         else:
             return ""
     def compilesubroutineCall(self):
         rs = ""
+
+        name = ""
+        nargs = 0
         if self.tn.lookahead2("symbol",["."]):
-            rs = self.compileclassName() or (setStatus("used")+self.compilevarName()+setStatus(None))
+            rs = self.compileclassName() or self.compilevarName()
+            name = self.tn.token
             rs = rs + self.compileterminal("symbol",["."])
             rs = rs + self.compilesubroutineName()
+            name = name + "." + self.tn.token
             rs = rs + self.compileterminal("symbol",["("])
-            rs = rs + self.compileexpressionList()
+            _explist = self.compileexpressionList()
+            for line in _explist.split("\n"):
+                if "identifier" in line:
+                    m=re.match(r"<identifier> (.+) </identifier>", line)
+                    assert(m)
+                    token=m.group(1).strip()
+                    segment = self.symtable.segmentOf(token)
+                    index = self.symtable.indexOf(token)
+                    self.vm.writePush(segment,index)
+                    
+            nargs = len(_explist.split(','))
+            rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
+            self.vm.writeCall(name,nargs)
         elif self.tn.lookahead2("symbol",["("]):
             rs = self.compilesubroutineName()
+            name = self.tn.token
             rs = rs + self.compileterminal("symbol","(")
             rs = rs + self.compileexpressionList()
+            _explist = self.compileexpressionList()
+            nargs = len(_explist.split(','))
+            self.vm.writeCall(name,nargs)
             rs = rs + self.compileterminal("symbol",")")
         else:
             rs = ""
+
 	return rs
     def compileexpressionList(self):
         rs = ""
@@ -432,13 +643,22 @@ class CompilationEngine:
             rs = self.compileexpression()
         if self.tn.lookahead("symbol",[","]):
             rs = rs + self.star(self.compileexpression,None,True)
+
         return "<expressionList>\n" + rs + "</expressionList>\n"
 
     def compileop(self):
-        opsymbols = "+ - * / &amp; | &lt; &gt; =".split(" ")
-	return self.compileterminal("symbol",opsymbols)
+        rs = self.compileterminal("symbol",self.opsymbols)
+        if rs:
+            self.operators.append(self.operators_table[self.tn.token])
+	return rs
+    
     def compileunaryOp(self):
-        return self.compileterminal("symbol",["-","~"])
+        rs = self.compileterminal("symbol",["-","~"])
+        if self.tn.token == "-":
+            self.operators.append(["NEG"])
+        else: # ~
+            self.operators.append(["NOT"])
+        return rs
 
     
 
@@ -460,3 +680,7 @@ if __name__ == "__main__":
         ce = CompilationEngine(f)
 #        print ce.compileClass()
         ce.generateXml()
+        print "Class Symbol Table"
+        print ce.symtable.cls
+        print "Transfer Symbol Table"
+        print ce.symtable.subroutine

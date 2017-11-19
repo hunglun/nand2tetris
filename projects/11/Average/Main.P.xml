@@ -1,11 +1,11 @@
 <class>
 <keyword> class </keyword>
-<identifier> Main </identifier>['class', '', '', None]
+<identifier> Main </identifier>
 <symbol> { </symbol>
 <subroutineDec>
-<keyword> function </keyword>
+<keyword> function </keyword>function
 <keyword> void </keyword>
-<identifier> main </identifier>['subroutine', '', '', None]
+<identifier> main </identifier>Main.main
 <symbol> ( </symbol>
 <parameterList>
 </parameterList>
@@ -14,34 +14,34 @@
 <symbol> { </symbol>
 <varDec>
 <keyword> var </keyword>
-<identifier> Array </identifier>['', '', '', None]
-<identifier> a </identifier>['', '', '', None]
+<identifier> Array </identifier>
+<identifier> a </identifier>['a', 'var', 'local', 'Array', 'defined', 0]
 <symbol> ; </symbol>
 </varDec>
 <varDec>
 <keyword> var </keyword>
 <keyword> int </keyword>
-<identifier> length </identifier>['', '', '', None]
+<identifier> length </identifier>['length', 'var', 'local', 'int', 'defined', 1]
 <symbol> ; </symbol>
 </varDec>
 <varDec>
 <keyword> var </keyword>
 <keyword> int </keyword>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>['i', 'var', 'local', 'int', 'defined', 2]
 <symbol> , </symbol>
-<identifier> sum </identifier>['', '', '', None]
+<identifier> sum </identifier>['sum', 'var', 'local', 'int', 'defined', 3]
 <symbol> ; </symbol>
 </varDec>
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<identifier> length </identifier>['', '', '', None]
+<identifier> length </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> Keyboard </identifier>['', '', '', None]
+<identifier> Keyboard </identifier>
 <symbol> . </symbol>
-<identifier> readInt </identifier>['', '', '', None]
+<identifier> readInt </identifier>Main.readInt
 <symbol> ( </symbol>
 <expressionList>
 <expression>
@@ -57,18 +57,18 @@
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
-<identifier> a </identifier>['', '', '', None]
+<identifier> a </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> Array </identifier>['', '', '', None]
+<identifier> Array </identifier>
 <symbol> . </symbol>
-<identifier> new </identifier>['', '', '', None]
+<identifier> new </identifier>Main.new
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
-<identifier> length </identifier>['', '', '', None]
+<identifier> length </identifier>
 </term>
 </expression>
 </expressionList>
@@ -79,7 +79,7 @@
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
@@ -93,11 +93,11 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 </term>
 <symbol> &lt; </symbol>
 <term>
-<identifier> length </identifier>['', '', '', None]
+<identifier> length </identifier>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -105,20 +105,20 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<identifier> a </identifier>['', '', '', None]
+<identifier> a </identifier>
 <symbol> [ </symbol>
 <expression>
 <term>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 </term>
 </expression>
 <symbol> ] </symbol>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> Keyboard </identifier>['', '', '', None]
+<identifier> Keyboard </identifier>
 <symbol> . </symbol>
-<identifier> readInt </identifier>['', '', '', None]
+<identifier> readInt </identifier>Main.readInt
 <symbol> ( </symbol>
 <expressionList>
 <expression>
@@ -134,19 +134,19 @@
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
-<identifier> sum </identifier>['', '', '', None]
+<identifier> sum </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> sum </identifier>['', '', '', None]
+<identifier> sum </identifier>
 </term>
 <symbol> + </symbol>
 <term>
-<identifier> a </identifier>['', '', '', None]
+<identifier> a </identifier>
 <symbol> [ </symbol>
 <expression>
 <term>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 </term>
 </expression>
 <symbol> ] </symbol>
@@ -156,11 +156,11 @@
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 <symbol> = </symbol>
 <expression>
 <term>
-<identifier> i </identifier>['', '', '', None]
+<identifier> i </identifier>
 </term>
 <symbol> + </symbol>
 <term>
@@ -174,9 +174,9 @@
 </whileStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> Output </identifier>['', '', '', None]
+<identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> printString </identifier>['', '', '', None]
+<identifier> printString </identifier>Main.printString
 <symbol> ( </symbol>
 <expressionList>
 <expression>
@@ -190,18 +190,18 @@
 </doStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> Output </identifier>['', '', '', None]
+<identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> printInt </identifier>['', '', '', None]
+<identifier> printInt </identifier>Main.printInt
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
-<identifier> sum </identifier>['', '', '', None]
+<identifier> sum </identifier>
 </term>
 <symbol> / </symbol>
 <term>
-<identifier> length </identifier>['', '', '', None]
+<identifier> length </identifier>
 </term>
 </expression>
 </expressionList>

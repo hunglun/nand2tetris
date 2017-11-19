@@ -8,6 +8,7 @@
 # Mon Oct 23 03:33:17 +08 2017 fixed both bugs
 # Tue Oct 24 23:45:53 +08 2017 fixing bugs in parser
 # Thu Oct 26 07:00:56 +08 2017 completed Parser!
+# Sat Nov 11 23:17:01 +08 2017 remove multi-line comments
 
 
 import sys,re,os,numbers
@@ -20,6 +21,8 @@ class Tokenizer:
         for line in f.readlines():
             line = line.strip()
             if line == "" or line.startswith("//"):
+                continue
+            if  line.startswith("*") or line.startswith("/*"):
                 continue
             m=re.match(r"(.*?)//.*", line) or re.match(r"(.*?)/\**.*\*/", line)
             if m:
