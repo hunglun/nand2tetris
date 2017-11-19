@@ -18,6 +18,7 @@
 # Sat Nov 18 22:31:53 +08 2017 store return function value in a variable
 # Sat Nov 18 23:46:04 +08 2017 every call add a return value to stack. pop temp 0 if return void
 # Sun Nov 19 00:58:30 +08 2017 push argument to stack
+# Sun Nov 19 09:56:24 +08 2017 handle true and false
 
 
 # TODO:
@@ -368,7 +369,11 @@ class CompilationEngine:
 
         if tn.tokenType == "integerConstant":
             self.vm.writePush("CONST",int(tn.token))
-        
+        if tn.tokenType == "keyword" and tn.token == "false":
+            self.vm.writePush("CONST",0)
+        if tn.tokenType == "keyword" and tn.token == "true":
+            self.vm.writePush("CONST",0)
+            self.vm.writeArithmetic("NOT")
         if tn.tokenType == "identifier":
             if declare:
                 kind = declare[0]
