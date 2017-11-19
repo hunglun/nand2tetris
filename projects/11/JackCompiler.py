@@ -19,6 +19,7 @@
 # Sat Nov 18 23:46:04 +08 2017 every call add a return value to stack. pop temp 0 if return void
 # Sun Nov 19 00:58:30 +08 2017 push argument to stack
 # Sun Nov 19 09:56:24 +08 2017 handle true and false
+#                              handle while
 
 
 # TODO:
@@ -505,6 +506,7 @@ class CompilationEngine:
             rs = rs + self.compileexpression()
             rs = rs + self.compileterminal("symbol","]")
         rs = rs + self.compileterminal("symbol","=")
+        
         rs = rs + self.compileexpression()
         rs = rs + self.compileterminal("symbol",";")
         self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
@@ -530,14 +532,27 @@ class CompilationEngine:
     def compilewhileStatement(self):
         if not self.tn.lookahead("keyword",["while"]):
             return ""
-
+        self.vm.writeLabel("WHILE_EXP%d" % 0) # assign a running index to label
         rs = self.compileterminal("keyword",["while"])
         rs = rs + self.compileterminal("symbol",["("])
-        rs = rs + self.compileexpression()
+        _exp = self.compileexpression()
+        for line in _exp.split("\n"):
+            if "identifier" in line:
+                m=re.match(r"<identifier> (.+) </identifier>", line)
+                assert(m)
+                token=m.group(1).strip()
+                segment = self.symtable.segmentOf(token)
+                index = self.symtable.indexOf(token)
+                self.vm.writePush(segment,index)
+        self.vm.writeArithmetic("NOT")
+        self.vm.writeIf("WHILE_END%d" % 0)
+        rs = rs + _exp
         rs = rs + self.compileterminal("symbol",[")"])
         rs = rs + self.compileterminal("symbol",["{"])
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
+        self.vm.writeGoto("WHILE_EXP%d" % 0)
+        self.vm.writeLabel("WHILE_END%d" % 0) # assign a running index to label
 	return "<whileStatement>\n" + rs + "</whileStatement>\n"
     def compiledoStatement(self):
         if not self.tn.lookahead("keyword",["do"]):
@@ -563,17 +578,18 @@ class CompilationEngine:
 
         return  "<returnStatement>\n" + rs + "</returnStatement>\n"
     def compileexpression(self):
+        self.operators = []
+
         rs = self.compileterm()
         if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
+
         self.operators.reverse()
-            
         for f in self.operators:
             if len(f) == 1:
                 self.vm.writeArithmetic(f[0])
             else:
                 self.vm.writeCall(f[0],f[1])
-        self.operators = []
 
         if rs:
             return "<expression>\n" + rs + "</expression>\n"
