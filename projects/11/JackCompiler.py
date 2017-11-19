@@ -20,11 +20,12 @@
 # Sun Nov 19 00:58:30 +08 2017 push argument to stack
 # Sun Nov 19 09:56:24 +08 2017 handle true and false
 #                              handle while
+#                              write identifier
 
 
 # TODO:
 # - every compile ConvertToBin
-
+#   - avoid redundant write
 import sys,re,os,numbers
 
 class Symboltable:
@@ -84,7 +85,7 @@ class VMWriter:
         _dict = {
             "CONST": "constant",
             "LOCAL" : "local",
-            "ARG": "arg",
+            "ARG": "argument",
             "TEMP": "temp"
         }
         assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
@@ -93,7 +94,14 @@ class VMWriter:
 
     def writePop(self, segment, index):
         assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
-        code = "pop %s %d\n" % (segment.lower(), index)
+        _dict = {
+            "CONST": "constant",
+            "LOCAL" : "local",
+            "ARG": "argument",
+            "TEMP": "temp"
+        }
+
+        code = "pop %s %d\n" % (_dict[segment], index)
         self.vmfile.write(code)
         
     def writeArithmetic(self, command):
@@ -368,13 +376,6 @@ class CompilationEngine:
         if tokenList:
             assert(tn.token in tokenList)
 
-        if tn.tokenType == "integerConstant":
-            self.vm.writePush("CONST",int(tn.token))
-        if tn.tokenType == "keyword" and tn.token == "false":
-            self.vm.writePush("CONST",0)
-        if tn.tokenType == "keyword" and tn.token == "true":
-            self.vm.writePush("CONST",0)
-            self.vm.writeArithmetic("NOT")
         if tn.tokenType == "identifier":
             if declare:
                 kind = declare[0]
@@ -536,14 +537,6 @@ class CompilationEngine:
         rs = self.compileterminal("keyword",["while"])
         rs = rs + self.compileterminal("symbol",["("])
         _exp = self.compileexpression()
-        for line in _exp.split("\n"):
-            if "identifier" in line:
-                m=re.match(r"<identifier> (.+) </identifier>", line)
-                assert(m)
-                token=m.group(1).strip()
-                segment = self.symtable.segmentOf(token)
-                index = self.symtable.indexOf(token)
-                self.vm.writePush(segment,index)
         self.vm.writeArithmetic("NOT")
         self.vm.writeIf("WHILE_END%d" % 0)
         rs = rs + _exp
@@ -584,6 +577,31 @@ class CompilationEngine:
         if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
 
+        for line in rs.split("\n"):
+            if "identifier" in line:
+                m=re.match(r"<identifier> (.+) </identifier>", line)
+                assert(m)
+                token=m.group(1).strip()
+                segment = self.symtable.segmentOf(token)
+                index = self.symtable.indexOf(token)
+                if segment!=None and index!=None:
+                    self.vm.writePush(segment,index)
+            if "integerConstant" in line:
+                m=re.match(r"<integerConstant> (.+) </integerConstant>", line)
+                assert(m)
+                token=m.group(1).strip()
+                print "check",token,rs
+                self.vm.writePush("CONST",int(token))
+            if "keyword" in line:
+                m=re.match(r"<keyword> (.+) </keyword>", line)
+                assert(m)
+                token=m.group(1).strip()
+                if token == "false":
+                    self.vm.writePush("CONST",0)
+                if token == "true":
+                    self.vm.writePush("CONST",0)
+                    self.vm.writeArithmetic("NOT")
+    
         self.operators.reverse()
         for f in self.operators:
             if len(f) == 1:
@@ -632,15 +650,6 @@ class CompilationEngine:
             name = name + "." + self.tn.token
             rs = rs + self.compileterminal("symbol",["("])
             _explist = self.compileexpressionList()
-            for line in _explist.split("\n"):
-                if "identifier" in line:
-                    m=re.match(r"<identifier> (.+) </identifier>", line)
-                    assert(m)
-                    token=m.group(1).strip()
-                    segment = self.symtable.segmentOf(token)
-                    index = self.symtable.indexOf(token)
-                    self.vm.writePush(segment,index)
-                    
             nargs = len(_explist.split(','))
             rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
