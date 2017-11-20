@@ -21,11 +21,13 @@
 # Sun Nov 19 09:56:24 +08 2017 handle true and false
 #                              handle while
 #                              write identifier
+# Mon Nov 20 22:01:25 +08 2017 write if command
 
 
 # TODO:
 # - every compile ConvertToBin
 #   - avoid redundant write
+#   - fix if-statement bugs
 import sys,re,os,numbers
 
 class Symboltable:
@@ -322,6 +324,7 @@ class CompilationEngine:
             "~"  : ["NOT"]
         }
         self.opsymbols = self.operators_table.keys()
+        self.ifcounter = 0
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
 
@@ -519,16 +522,22 @@ class CompilationEngine:
         rs = self.compileterminal("keyword",["if"])
         rs = rs + self.compileterminal("symbol",["("])
         rs = rs + self.compileexpression()
+        self.vm.writeArithmetic("NOT")
+        self.vm.writeIf("IF_TRUE%d" % self.ifcounter)
+        self.vm.writeGoto("IF_FALSE%d" % self.ifcounter)
+        self.vm.writeLabel("IF_TRUE%d" % self.ifcounter)
+
         rs = rs + self.compileterminal("symbol",[")"])
         rs = rs + self.compileterminal("symbol",["{"])
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
-
+        self.vm.writeLabel("IF_FALSE%d" % self.ifcounter)
         if self.tn.lookahead("keyword",["else"]):
             rs = rs + self.compileterminal("keyword",["else"])
             rs = rs + self.compileterminal("symbol",["{"])
             rs = rs + self.compilestatements()
             rs = rs + self.compileterminal("symbol",["}"])
+        self.ifcounter = self.ifcounter + 1
 	return "<ifStatement>\n" + rs + "</ifStatement>\n"
     def compilewhileStatement(self):
         if not self.tn.lookahead("keyword",["while"]):
