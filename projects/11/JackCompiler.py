@@ -26,9 +26,11 @@
 #                              fix double 'gt'
 #                              place 'and' correctly
 #                              place 'add' correctly
+#                              refactor    
 # TODO:
 # - every compile ConvertToBin
 #   - fix if-statement bugs
+#   - place 'not' correctly
 import sys,re,os,numbers
 
 class Symboltable:
@@ -631,20 +633,23 @@ class CompilationEngine:
         rs = self.compileterminal("integerConstant")
         rs = rs or self.compileterminal("stringConstant")
         rs = rs or self.compileterminal("keyword",["true","false","null","this"])
-        if self.tn.lookahead2("symbol","["):
+        if self.tn.lookahead2("symbol","["): 
             rs = rs or ( self.compilevarName()
                         + self.compileterminal("symbol",["["])
                         + self.compileexpression()
                         + self.compileterminal("symbol",["]"]))
+            self._writeOperators()
 
         if self.tn.lookahead("symbol","("):
             rs = rs or (self.compileterminal("symbol",["("])
                         + self.compileexpression()
                         + self.compileterminal("symbol",[")"]))
+            self._writeOperators()
 
         if self.tn.lookahead("symbol",["~","-"]):
             rs = rs or (self.compileunaryOp() + self.compileterm())
-            
+            self._writeOperators()
+
 
         rs = rs or self.compilesubroutineCall()
 
@@ -696,8 +701,6 @@ class CompilationEngine:
     def compileop(self):
         rs = self.compileterminal("symbol",self.opsymbols)
         if rs:
-            if self.tn.token == "=":
-                self._writeOperators()
             self.operators.append(self.operators_table[self.tn.token])
 	return rs
     
