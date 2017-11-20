@@ -24,7 +24,7 @@
 # Mon Nov 20 22:01:25 +08 2017 write if command
 #                              avoid redundant write
 #                              fix double 'gt'
-
+#                              place 'and' correctly
 # TODO:
 # - every compile ConvertToBin
 #   - fix if-statement bugs
@@ -640,6 +640,7 @@ class CompilationEngine:
 
         if self.tn.lookahead("symbol",["~","-"]):
             rs = rs or (self.compileunaryOp() + self.compileterm())
+            
 
         rs = rs or self.compilesubroutineCall()
 
@@ -692,6 +693,8 @@ class CompilationEngine:
     def compileop(self):
         rs = self.compileterminal("symbol",self.opsymbols)
         if rs:
+            if self.tn.token == "=":
+                self._writeOperators()
             self.operators.append(self.operators_table[self.tn.token])
 	return rs
     
@@ -701,6 +704,7 @@ class CompilationEngine:
             self.operators.append(["NEG"])
         if self.tn.token == "~":
             self.operators.append(["NOT"])
+            
         return rs
 
     
