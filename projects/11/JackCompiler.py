@@ -23,7 +23,7 @@
 #                              write identifier
 # Mon Nov 20 22:01:25 +08 2017 write if command
 #                              avoid redundant write
-
+#                              fix double 'gt'
 
 # TODO:
 # - every compile ConvertToBin
@@ -513,6 +513,15 @@ class CompilationEngine:
         return self.compileterminal("identifier",declare=declare)
     def compilestatements(self):
         return "<statements>\n" + self.star(self.compilestatement) + "</statements>\n"
+    def _writeOperators(self):
+        self.operators.reverse()
+        for f in self.operators:
+            if len(f) == 1:
+                self.vm.writeArithmetic(f[0])
+            else:
+                self.vm.writeCall(f[0],f[1])
+
+        self.operators = []
 
     def compilestatement(self):
 	return self.compileletStatement() or self.compileifStatement() or self.compilewhileStatement() or self.compiledoStatement() or self.compilereturnStatement()
@@ -524,11 +533,14 @@ class CompilationEngine:
         varname = self.tn.token
         if self.tn.lookahead("symbol",["["]):
             rs = rs + self.compileterminal("symbol","[")
+            
             rs = rs + self.compileexpression()
+            self._writeOperators()
             rs = rs + self.compileterminal("symbol","]")
         rs = rs + self.compileterminal("symbol","=")
         
-        rs = rs + self.compileexpression()
+        rs = rs + self.compileexpression()        
+        self._writeOperators()
         rs = rs + self.compileterminal("symbol",";")
         self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
 	return "<letStatement>\n" + rs + "</letStatement>\n"
@@ -538,8 +550,10 @@ class CompilationEngine:
 
         rs = self.compileterminal("keyword",["if"])
         rs = rs + self.compileterminal("symbol",["("])
+        
         rs = rs + self.compileexpression()
-        self.vm.writeArithmetic("NOT")
+        self._writeOperators()
+#        self.vm.writeArithmetic("NOT")
         self.vm.writeIf("IF_TRUE%d" % self.ifcounter)
         self.vm.writeGoto("IF_FALSE%d" % self.ifcounter)
         self.vm.writeLabel("IF_TRUE%d" % self.ifcounter)
@@ -562,7 +576,9 @@ class CompilationEngine:
         self.vm.writeLabel("WHILE_EXP%d" % 0) # assign a running index to label
         rs = self.compileterminal("keyword",["while"])
         rs = rs + self.compileterminal("symbol",["("])
+        
         _exp = self.compileexpression()
+        self._writeOperators()
         self.vm.writeArithmetic("NOT")
         self.vm.writeIf("WHILE_END%d" % 0)
         rs = rs + _exp
@@ -578,6 +594,7 @@ class CompilationEngine:
             return ""
 
 	rs = self.compileterminal("keyword",["do"])
+        
         rs = rs + self.compilesubroutineCall()
         rs = rs + self.compileterminal("symbol",[";"])
         self.vm.writePop("TEMP",0)
@@ -589,28 +606,20 @@ class CompilationEngine:
 
         if self.tn.lookahead("symbol",[";"]):
             self.vm.writePush("CONST",0)
-
+        
         rs = rs + self.compileexpression()
+        self._writeOperators()
         rs = rs + self.compileterminal("symbol",[";"])
 
         self.vm.writeReturn()
 
         return  "<returnStatement>\n" + rs + "</returnStatement>\n"
     def compileexpression(self):
-        self.operators = []
         self.doPush = True
         rs = self.compileterm()
         if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
         self.doPush = False
-    
-        self.operators.reverse()
-        for f in self.operators:
-            if len(f) == 1:
-                self.vm.writeArithmetic(f[0])
-            else:
-                self.vm.writeCall(f[0],f[1])
-
         if rs:
             return "<expression>\n" + rs + "</expression>\n"
         return ""
@@ -652,6 +661,7 @@ class CompilationEngine:
             name = name + "." + self.tn.token
             rs = rs + self.compileterminal("symbol",["("])
             _explist = self.compileexpressionList()
+            self._writeOperators()
             nargs = len(_explist.split(','))
             rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
@@ -660,8 +670,9 @@ class CompilationEngine:
             rs = self.compilesubroutineName()
             name = self.tn.token
             rs = rs + self.compileterminal("symbol","(")
-            rs = rs + self.compileexpressionList()
             _explist = self.compileexpressionList()
+            self._writeOperators()
+            rs = rs + _explist
             nargs = len(_explist.split(','))
             self.vm.writeCall(name,nargs)
             rs = rs + self.compileterminal("symbol",")")
@@ -688,7 +699,7 @@ class CompilationEngine:
         rs = self.compileterminal("symbol",["-","~"])
         if self.tn.token == "-":
             self.operators.append(["NEG"])
-        else: # ~
+        if self.tn.token == "~":
             self.operators.append(["NOT"])
         return rs
 
