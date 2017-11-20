@@ -46,15 +46,15 @@ goto IF_FALSE0
 label IF_TRUE0
 push constant 8000
 push local 1
-push constant 1
 add
+push constant 1
 call Memory.poke 2
 pop temp 0
 label IF_FALSE0
 push constant 8000
 push local 1
-push constant 0
 add
+push constant 0
 call Memory.poke 2
 pop temp 0
 label IF_FALSE1

@@ -25,6 +25,7 @@
 #                              avoid redundant write
 #                              fix double 'gt'
 #                              place 'and' correctly
+#                              place 'add' correctly
 # TODO:
 # - every compile ConvertToBin
 #   - fix if-statement bugs
@@ -445,7 +446,7 @@ class CompilationEngine:
         return "<parameterList>\n" + rs + "</parameterList>\n"
 
     # TODO simplify this function
-    def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[]):
+    def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[],writeOperator=False):
         rs = ""
         temp = ""
         if comma:
@@ -477,6 +478,9 @@ class CompilationEngine:
                     temp = temp + compiler2(declare2)
                 else:
                     temp = temp + compiler2()
+        if writeOperator:
+            self._writeOperators()
+
         return rs
 
     def compilesubroutineBody(self):
@@ -662,7 +666,6 @@ class CompilationEngine:
             name = name + "." + self.tn.token
             rs = rs + self.compileterminal("symbol",["("])
             _explist = self.compileexpressionList()
-            self._writeOperators()
             nargs = len(_explist.split(','))
             rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
@@ -672,7 +675,6 @@ class CompilationEngine:
             name = self.tn.token
             rs = rs + self.compileterminal("symbol","(")
             _explist = self.compileexpressionList()
-            self._writeOperators()
             rs = rs + _explist
             nargs = len(_explist.split(','))
             self.vm.writeCall(name,nargs)
@@ -685,8 +687,9 @@ class CompilationEngine:
         rs = ""
         if not self.tn.lookahead("symbol",[")"]):
             rs = self.compileexpression()
+            self._writeOperators()
         if self.tn.lookahead("symbol",[","]):
-            rs = rs + self.star(self.compileexpression,None,True)
+            rs = rs + self.star(self.compileexpression,None,True,writeOperator=True)
 
         return "<expressionList>\n" + rs + "</expressionList>\n"
 
