@@ -22,11 +22,11 @@
 #                              handle while
 #                              write identifier
 # Mon Nov 20 22:01:25 +08 2017 write if command
+#                              avoid redundant write
 
 
 # TODO:
 # - every compile ConvertToBin
-#   - avoid redundant write
 #   - fix if-statement bugs
 import sys,re,os,numbers
 
@@ -325,6 +325,7 @@ class CompilationEngine:
         }
         self.opsymbols = self.operators_table.keys()
         self.ifcounter = 0
+        self.doPush = False
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
 
@@ -379,6 +380,22 @@ class CompilationEngine:
         if tokenList:
             assert(tn.token in tokenList)
 
+        if tn.tokenType == "integerConstant":
+                self.vm.writePush("CONST",int(tn.token))
+
+        if tn.tokenType == "identifier" and self.doPush:
+            segment = self.symtable.segmentOf(tn.token)
+            index = self.symtable.indexOf(tn.token)
+            if segment!=None and index!=None:
+                self.vm.writePush(segment,index)
+
+        if tn.tokenType == "keyword" and self.doPush:
+            if tn.token == "false":
+                self.vm.writePush("CONST",0)
+            if tn.token == "true":
+                self.vm.writePush("CONST",0)
+                self.vm.writeArithmetic("NOT")
+                
         if tn.tokenType == "identifier":
             if declare:
                 kind = declare[0]
@@ -581,35 +598,11 @@ class CompilationEngine:
         return  "<returnStatement>\n" + rs + "</returnStatement>\n"
     def compileexpression(self):
         self.operators = []
-
+        self.doPush = True
         rs = self.compileterm()
         if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
-
-        for line in rs.split("\n"):
-            if "identifier" in line:
-                m=re.match(r"<identifier> (.+) </identifier>", line)
-                assert(m)
-                token=m.group(1).strip()
-                segment = self.symtable.segmentOf(token)
-                index = self.symtable.indexOf(token)
-                if segment!=None and index!=None:
-                    self.vm.writePush(segment,index)
-            if "integerConstant" in line:
-                m=re.match(r"<integerConstant> (.+) </integerConstant>", line)
-                assert(m)
-                token=m.group(1).strip()
-                print "check",token,rs
-                self.vm.writePush("CONST",int(token))
-            if "keyword" in line:
-                m=re.match(r"<keyword> (.+) </keyword>", line)
-                assert(m)
-                token=m.group(1).strip()
-                if token == "false":
-                    self.vm.writePush("CONST",0)
-                if token == "true":
-                    self.vm.writePush("CONST",0)
-                    self.vm.writeArithmetic("NOT")
+        self.doPush = False
     
         self.operators.reverse()
         for f in self.operators:
