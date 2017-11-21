@@ -383,21 +383,8 @@ class CompilationEngine:
         if tokenList:
             assert(tn.token in tokenList)
 
-        if tn.tokenType == "integerConstant":
-                self.vm.writePush("CONST",int(tn.token))
 
-        if tn.tokenType == "identifier" and self.doPush:
-            segment = self.symtable.segmentOf(tn.token)
-            index = self.symtable.indexOf(tn.token)
-            if segment!=None and index!=None:
-                self.vm.writePush(segment,index)
 
-        if tn.tokenType == "keyword" and self.doPush:
-            if tn.token == "false":
-                self.vm.writePush("CONST",0)
-            if tn.token == "true":
-                self.vm.writePush("CONST",0)
-                self.vm.writeArithmetic("NOT")
                 
         if tn.tokenType == "identifier":
             if declare:
@@ -625,39 +612,44 @@ class CompilationEngine:
         rs = self.compileterm()
         if self.tn.lookahead("symbol",self.opsymbols):
             rs = rs + self.star(self.compileop,self.compileterm)
+            self._writeOperators()
         self.doPush = False
         if rs:
             return "<expression>\n" + rs + "</expression>\n"
         return ""
     def compileterm(self):
-        rs = self.compileterminal("integerConstant")
-        rs = rs or self.compileterminal("stringConstant")
-        rs = rs or self.compileterminal("keyword",["true","false","null","this"])
-        if self.tn.lookahead2("symbol","["): 
-            rs = rs or ( self.compilevarName()
-                        + self.compileterminal("symbol",["["])
-                        + self.compileexpression()
-                        + self.compileterminal("symbol",["]"]))
+        if self.compileterminal("integerConstant"):
+            self.vm.writePush("CONST",int(self.tn.token))
+        elif self.compileterminal("stringConstant"):
+            pass
+        elif self.compileterminal("keyword",["true","false","null","this"]):
+            if self.tn.token == "false":
+                self.vm.writePush("CONST",0)
+            if self.tn.token == "true":
+                self.vm.writePush("CONST",0)
+                self.vm.writeArithmetic("NOT")
+        elif self.tn.lookahead2("symbol","["): 
+            ( self.compilevarName()
+              + self.compileterminal("symbol",["["])
+              + self.compileexpression()
+              + self.compileterminal("symbol",["]"]))
+        elif self.tn.lookahead("symbol","("):
+            (self.compileterminal("symbol",["("])
+             + self.compileexpression()
+             + self.compileterminal("symbol",[")"]))
+        elif self.tn.lookahead("symbol",["~","-"]):
+            (self.compileunaryOp() + self.compileterm())
             self._writeOperators()
+        elif self.compilesubroutineCall():
+            pass
+        elif self.compilevarName():
+            segment = self.symtable.segmentOf(self.tn.token)
+            index = self.symtable.indexOf(self.tn.token)
+            self.vm.writePush(segment,index)
 
-        if self.tn.lookahead("symbol","("):
-            rs = rs or (self.compileterminal("symbol",["("])
-                        + self.compileexpression()
-                        + self.compileterminal("symbol",[")"]))
-            self._writeOperators()
-
-        if self.tn.lookahead("symbol",["~","-"]):
-            rs = rs or (self.compileunaryOp() + self.compileterm())
-            self._writeOperators()
-
-
-        rs = rs or self.compilesubroutineCall()
-
-        rs = rs or  self.compilevarName()
-        if rs:
-	    return "<term>\n" + rs + "</term>\n"
         else:
             return ""
+        return "TRUE"
     def compilesubroutineCall(self):
         rs = ""
 

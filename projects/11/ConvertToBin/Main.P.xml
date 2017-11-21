@@ -27,25 +27,13 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 8001 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 16 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -55,21 +43,7 @@
 <identifier> value </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Memory </identifier>
-<symbol> . </symbol>
-<identifier> peek </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<integerConstant> 8000 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
@@ -80,10 +54,7 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> value </identifier>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -128,20 +99,14 @@
 <identifier> loop </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> loop </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -150,14 +115,8 @@
 <identifier> position </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> position </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -165,44 +124,14 @@
 <identifier> mask </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Main </identifier>
-<symbol> . </symbol>
-<identifier> nextMask </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> mask </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> position </identifier>
-</term>
-<symbol> &gt; </symbol>
-<term>
-<integerConstant> 16 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -210,33 +139,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> value </identifier>
-</term>
-<symbol> &amp; </symbol>
-<term>
-<identifier> mask </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -248,20 +151,11 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 8000 </integerConstant>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> position </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -279,20 +173,11 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 8000 </integerConstant>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> position </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -310,10 +195,7 @@
 <identifier> loop </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -347,24 +229,15 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> mask </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -375,14 +248,8 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> mask </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> * </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -415,14 +282,8 @@
 <keyword> while </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> length </identifier>
-</term>
-<symbol> &gt; </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> &gt; </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -434,16 +295,10 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> startAddress </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> value </identifier>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -453,14 +308,8 @@
 <identifier> length </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> length </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -468,14 +317,8 @@
 <identifier> startAddress </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> startAddress </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
