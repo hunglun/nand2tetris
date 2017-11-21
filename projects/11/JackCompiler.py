@@ -28,10 +28,10 @@
 #                              place 'add' correctly
 #                              refactor
 # Wed Nov 22 00:59:56 +08 2017 place 'not' correctly
+#                              fix if-statement bugs
 
 # TODO:
-# - every compile ConvertToBin
-#   - fix if-statement bugs
+# - compile Square correctly
 
 import sys,re,os,numbers
 
@@ -329,7 +329,7 @@ class CompilationEngine:
             "~"  : ["NOT"]
         }
         self.opsymbols = self.operators_table.keys()
-        self.ifcounter = 0
+        self.ifcounter = -1
 
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
@@ -407,6 +407,7 @@ class CompilationEngine:
         tn = self.tn
         if not tn.lookahead("keyword",["constructor","function","method"]):
             return ""
+        self.ifcounter = -1
 
         self.symtable.startSubroutine()
 
@@ -566,28 +567,30 @@ class CompilationEngine:
     def compileifStatement(self):
         if not self.tn.lookahead("keyword",["if"]):
             return ""
-
+        self.ifcounter = self.ifcounter + 1
+        ifcounter = self.ifcounter
         rs = self.compileterminal("keyword",["if"])
         rs = rs + self.compileterminal("symbol",["("])
         
         rs = rs + self.compileexpression()
 
 #        self.vm.writeArithmetic("NOT")
-        self.vm.writeIf("IF_TRUE%d" % self.ifcounter)
-        self.vm.writeGoto("IF_FALSE%d" % self.ifcounter)
-        self.vm.writeLabel("IF_TRUE%d" % self.ifcounter)
+        self.vm.writeIf("IF_TRUE%d" % ifcounter)
+        self.vm.writeGoto("IF_FALSE%d" % ifcounter)
+        self.vm.writeLabel("IF_TRUE%d" % ifcounter)
 
         rs = rs + self.compileterminal("symbol",[")"])
         rs = rs + self.compileterminal("symbol",["{"])
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
-        self.vm.writeLabel("IF_FALSE%d" % self.ifcounter)
+        self.vm.writeGoto("IF_END%d" % ifcounter)
+        self.vm.writeLabel("IF_FALSE%d" % ifcounter)
         if self.tn.lookahead("keyword",["else"]):
             rs = rs + self.compileterminal("keyword",["else"])
             rs = rs + self.compileterminal("symbol",["{"])
             rs = rs + self.compilestatements()
             rs = rs + self.compileterminal("symbol",["}"])
-        self.ifcounter = self.ifcounter + 1
+        self.vm.writeLabel("IF_END%d" % ifcounter)
 	return "<ifStatement>\n" + rs + "</ifStatement>\n"
     def compilewhileStatement(self):
         if not self.tn.lookahead("keyword",["while"]):
