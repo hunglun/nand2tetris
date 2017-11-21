@@ -38,9 +38,9 @@ label IF_TRUE0
 push argument 0
 push local 0
 and
-not
 push constant 0
 eq
+not
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0

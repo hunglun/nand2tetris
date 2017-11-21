@@ -26,11 +26,13 @@
 #                              fix double 'gt'
 #                              place 'and' correctly
 #                              place 'add' correctly
-#                              refactor    
+#                              refactor
+# Wed Nov 22 00:59:56 +08 2017 place 'not' correctly
+
 # TODO:
 # - every compile ConvertToBin
 #   - fix if-statement bugs
-#   - place 'not' correctly
+
 import sys,re,os,numbers
 
 class Symboltable:
@@ -328,7 +330,7 @@ class CompilationEngine:
         }
         self.opsymbols = self.operators_table.keys()
         self.ifcounter = 0
-        self.doPush = False
+
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
 
@@ -435,7 +437,33 @@ class CompilationEngine:
         return "<parameterList>\n" + rs + "</parameterList>\n"
 
     # TODO simplify this function
+    def chainops(self,operator,operand):
+        rs = ""
+        temp = ""
+
+        temp = temp + operator()
+        f = self.operators_table[self.tn.token]
+        temp = temp + operand()
+        if len(f) == 1:
+            self.vm.writeArithmetic(f[0])
+        else:
+            self.vm.writeCall(f[0],f[1])
+
+        while temp:
+            rs = rs + temp
+            temp = operator()
+            if temp:
+                f = self.operators_table[self.tn.token]
+                temp = temp + operand()
+                if len(f) == 1:
+                    self.vm.writeArithmetic(f[0])
+                else:
+                    self.vm.writeCall(f[0],f[1])
+
+        return rs
+        
     def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[],writeOperator=False):
+
         rs = ""
         temp = ""
         if comma:
@@ -467,8 +495,6 @@ class CompilationEngine:
                     temp = temp + compiler2(declare2)
                 else:
                     temp = temp + compiler2()
-        if writeOperator:
-            self._writeOperators()
 
         return rs
 
@@ -506,7 +532,7 @@ class CompilationEngine:
         return self.compileterminal("identifier",declare=declare)
     def compilestatements(self):
         return "<statements>\n" + self.star(self.compilestatement) + "</statements>\n"
-    def _writeOperators(self):
+
         self.operators.reverse()
         for f in self.operators:
             if len(f) == 1:
@@ -528,12 +554,12 @@ class CompilationEngine:
             rs = rs + self.compileterminal("symbol","[")
             
             rs = rs + self.compileexpression()
-            self._writeOperators()
+
             rs = rs + self.compileterminal("symbol","]")
         rs = rs + self.compileterminal("symbol","=")
         
         rs = rs + self.compileexpression()        
-        self._writeOperators()
+
         rs = rs + self.compileterminal("symbol",";")
         self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
 	return "<letStatement>\n" + rs + "</letStatement>\n"
@@ -545,7 +571,7 @@ class CompilationEngine:
         rs = rs + self.compileterminal("symbol",["("])
         
         rs = rs + self.compileexpression()
-        self._writeOperators()
+
 #        self.vm.writeArithmetic("NOT")
         self.vm.writeIf("IF_TRUE%d" % self.ifcounter)
         self.vm.writeGoto("IF_FALSE%d" % self.ifcounter)
@@ -571,7 +597,7 @@ class CompilationEngine:
         rs = rs + self.compileterminal("symbol",["("])
         
         _exp = self.compileexpression()
-        self._writeOperators()
+
         self.vm.writeArithmetic("NOT")
         self.vm.writeIf("WHILE_END%d" % 0)
         rs = rs + _exp
@@ -601,19 +627,18 @@ class CompilationEngine:
             self.vm.writePush("CONST",0)
         
         rs = rs + self.compileexpression()
-        self._writeOperators()
+
         rs = rs + self.compileterminal("symbol",[";"])
 
         self.vm.writeReturn()
 
         return  "<returnStatement>\n" + rs + "</returnStatement>\n"
     def compileexpression(self):
-        self.doPush = True
+
         rs = self.compileterm()
         if self.tn.lookahead("symbol",self.opsymbols):
-            rs = rs + self.star(self.compileop,self.compileterm)
-            self._writeOperators()
-        self.doPush = False
+            rs = rs + self.chainops(self.compileop,self.compileterm)
+
         if rs:
             return "<expression>\n" + rs + "</expression>\n"
         return ""
@@ -638,8 +663,11 @@ class CompilationEngine:
              + self.compileexpression()
              + self.compileterminal("symbol",[")"]))
         elif self.tn.lookahead("symbol",["~","-"]):
-            (self.compileunaryOp() + self.compileterm())
-            self._writeOperators()
+            self.compileunaryOp()
+            token = self.tn.token
+            self.compileterm()
+            _dict = {"-" : "NEG", "~" : "NOT" }
+            self.vm.writeArithmetic(_dict[token])
         elif self.compilesubroutineCall():
             pass
         elif self.compilevarName():
@@ -684,7 +712,7 @@ class CompilationEngine:
         rs = ""
         if not self.tn.lookahead("symbol",[")"]):
             rs = self.compileexpression()
-            self._writeOperators()
+
         if self.tn.lookahead("symbol",[","]):
             rs = rs + self.star(self.compileexpression,None,True,writeOperator=True)
 
@@ -692,18 +720,12 @@ class CompilationEngine:
 
     def compileop(self):
         rs = self.compileterminal("symbol",self.opsymbols)
-        if rs:
-            self.operators.append(self.operators_table[self.tn.token])
 	return rs
     
     def compileunaryOp(self):
         rs = self.compileterminal("symbol",["-","~"])
-        if self.tn.token == "-":
-            self.operators.append(["NEG"])
-        if self.tn.token == "~":
-            self.operators.append(["NOT"])
-            
         return rs
+
 
     
 
