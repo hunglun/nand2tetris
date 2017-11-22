@@ -8,7 +8,7 @@ push constant 0
 pop static 1
 return
 function SquareGame.dispose 0
-call square.dispose 1
+call square.dispose 0
 pop temp 0
 call Memory.deAlloc 1
 pop temp 0
@@ -21,7 +21,7 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-call square.moveUp 1
+call square.moveUp 0
 pop temp 0
 goto IF_END0
 label IF_FALSE0
@@ -32,7 +32,7 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-call square.moveDown 1
+call square.moveDown 0
 pop temp 0
 goto IF_END1
 label IF_FALSE1
@@ -43,7 +43,7 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-call square.moveLeft 1
+call square.moveLeft 0
 pop temp 0
 goto IF_END2
 label IF_FALSE2
@@ -54,7 +54,7 @@ eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-call square.moveRight 1
+call square.moveRight 0
 pop temp 0
 goto IF_END3
 label IF_FALSE3
@@ -78,9 +78,9 @@ push constant 0
 eq
 not
 if-goto WHILE_END0
-call Keyboard.keyPressed 1
+call Keyboard.keyPressed 0
 pop local 0
-call moveSquare 1
+call moveSquare 0
 pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
@@ -102,7 +102,7 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-call square.decSize 1
+call square.decSize 0
 pop temp 0
 goto IF_END1
 label IF_FALSE1
@@ -113,7 +113,7 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-call square.incSize 1
+call square.incSize 0
 pop temp 0
 goto IF_END2
 label IF_FALSE2
@@ -169,9 +169,9 @@ eq
 not
 not
 if-goto WHILE_END0
-call Keyboard.keyPressed 1
+call Keyboard.keyPressed 0
 pop local 0
-call moveSquare 1
+call moveSquare 0
 pop temp 0
 goto WHILE_EXP0
 label WHILE_END0

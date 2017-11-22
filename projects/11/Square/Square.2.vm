@@ -5,7 +5,7 @@ push argument 1
 pop static 1
 push argument 2
 pop static 2
-call draw 1
+call draw 0
 pop temp 0
 return
 function Square.dispose 0
@@ -61,13 +61,13 @@ and
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-call erase 1
+call erase 0
 pop temp 0
 push static 2
 push constant 2
 add
 pop static 2
-call draw 1
+call draw 0
 pop temp 0
 goto IF_END0
 label IF_FALSE0
@@ -81,13 +81,13 @@ gt
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-call erase 1
+call erase 0
 pop temp 0
 push static 2
 push constant 2
 sub
 pop static 2
-call draw 1
+call draw 0
 pop temp 0
 goto IF_END0
 label IF_FALSE0

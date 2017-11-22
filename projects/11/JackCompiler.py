@@ -310,8 +310,6 @@ class CompilationEngine:
         self.symtable = Symboltable()
         self.classname = ""
         self.subroutine_name = ""
-        self.operators = []
-        self.operands = []
         self.operators_table = {
             "*" : ["Math.multiply",2],
             "/" : ["Math.divide",2],
@@ -326,7 +324,7 @@ class CompilationEngine:
         }
         self.opsymbols = self.operators_table.keys()
         self.ifcounter = -1
-
+        self.nargs = 0
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
 
@@ -459,7 +457,7 @@ class CompilationEngine:
 
         return rs
         
-    def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[],writeOperator=False):
+    def star(self,compiler1,compiler2=None,comma=False,declare1=[],declare2=[]):
 
         rs = ""
         temp = ""
@@ -478,6 +476,7 @@ class CompilationEngine:
         while temp:
             rs = rs + temp
             if comma:
+                self.nargs = self.nargs + 1
                 if declare1:
                     temp = self.compileterminal("symbol",[","]) + compiler1(declare1)
                 else:
@@ -529,15 +528,6 @@ class CompilationEngine:
         return self.compileterminal("identifier",declare=declare)
     def compilestatements(self):
         return "<statements>\n" + self.star(self.compilestatement) + "</statements>\n"
-
-        self.operators.reverse()
-        for f in self.operators:
-            if len(f) == 1:
-                self.vm.writeArithmetic(f[0])
-            else:
-                self.vm.writeCall(f[0],f[1])
-
-        self.operators = []
 
     def compilestatement(self):
 	return self.compileletStatement() or self.compileifStatement() or self.compilewhileStatement() or self.compiledoStatement() or self.compilereturnStatement()
@@ -681,7 +671,6 @@ class CompilationEngine:
         rs = ""
 
         name = ""
-        nargs = 0
         if self.tn.lookahead2("symbol",["."]):
             rs = self.compileclassName() or self.compilevarName()
             name = self.tn.token
@@ -690,18 +679,16 @@ class CompilationEngine:
             name = name + "." + self.tn.token
             rs = rs + self.compileterminal("symbol",["("])
             _explist = self.compileexpressionList()
-            nargs = len(_explist.split(','))
             rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
-            self.vm.writeCall(name,nargs)
+            self.vm.writeCall(name,self.nargs)
         elif self.tn.lookahead2("symbol",["("]):
             rs = self.compilesubroutineName()
             name = self.tn.token
             rs = rs + self.compileterminal("symbol","(")
             _explist = self.compileexpressionList()
             rs = rs + _explist
-            nargs = len(_explist.split(','))
-            self.vm.writeCall(name,nargs)
+            self.vm.writeCall(name,self.nargs)
             rs = rs + self.compileterminal("symbol",")")
         else:
             rs = ""
@@ -709,11 +696,14 @@ class CompilationEngine:
 	return rs
     def compileexpressionList(self):
         rs = ""
+        self.nargs = 0
         if not self.tn.lookahead("symbol",[")"]):
             rs = self.compileexpression()
-
+            if rs:
+                self.nargs = 1
         if self.tn.lookahead("symbol",[","]):
-            rs = rs + self.star(self.compileexpression,None,True,writeOperator=True)
+            _exps= self.star(self.compileexpression,None,True)
+            rs = rs + _exps
 
         return "<expressionList>\n" + rs + "</expressionList>\n"
 
