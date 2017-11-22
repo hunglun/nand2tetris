@@ -31,8 +31,8 @@
 #                              fix if-statement bugs
 # Thu Nov 23 04:02:01 +08 2017 fix STATIC key error in transfer symbol table
 # Thu Nov 23 04:58:24 +08 2017 distinguish object subroutine
-
-
+#                              object subroutine has one implicit argument
+#                              compile Square/Main.jack successfully
 # TODO:
 # - compile Square correctly
 
@@ -674,13 +674,14 @@ class CompilationEngine:
         name = ""
         if self.tn.lookahead2("symbol",["."]):
             rs = self.compileclassName() or self.compilevarName()
+            implicit_arg = 0
             name = self.tn.token
             if self.symtable.typeOf(name):
                 segment = self.symtable.segmentOf(name)
                 index = self.symtable.indexOf(name)
                 self.vm.writePush(segment,index)
                 name = self.symtable.typeOf(name)
-                self.nargs = 1
+                implicit_arg = 1
             rs = rs + self.compileterminal("symbol",["."])
             rs = rs + self.compilesubroutineName()
             name = name + "." + self.tn.token
@@ -688,7 +689,7 @@ class CompilationEngine:
             _explist = self.compileexpressionList()
             rs = rs + _explist
             rs = rs + self.compileterminal("symbol",[")"])
-            self.vm.writeCall(name,self.nargs)
+            self.vm.writeCall(name,self.nargs + implicit_arg)
         elif self.tn.lookahead2("symbol",["("]):
             rs = self.compilesubroutineName()
             name = self.tn.token
