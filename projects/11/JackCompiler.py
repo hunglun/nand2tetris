@@ -30,6 +30,7 @@
 # Wed Nov 22 00:59:56 +08 2017 place 'not' correctly
 #                              fix if-statement bugs
 # Thu Nov 23 04:02:01 +08 2017 fix STATIC key error in transfer symbol table
+# Thu Nov 23 04:58:24 +08 2017 distinguish object subroutine
 
 
 # TODO:
@@ -674,6 +675,12 @@ class CompilationEngine:
         if self.tn.lookahead2("symbol",["."]):
             rs = self.compileclassName() or self.compilevarName()
             name = self.tn.token
+            if self.symtable.typeOf(name):
+                segment = self.symtable.segmentOf(name)
+                index = self.symtable.indexOf(name)
+                self.vm.writePush(segment,index)
+                name = self.symtable.typeOf(name)
+                self.nargs = 1
             rs = rs + self.compileterminal("symbol",["."])
             rs = rs + self.compilesubroutineName()
             name = name + "." + self.tn.token
