@@ -29,6 +29,8 @@
 #                              refactor
 # Wed Nov 22 00:59:56 +08 2017 place 'not' correctly
 #                              fix if-statement bugs
+# Thu Nov 23 04:02:01 +08 2017 fix STATIC key error in transfer symbol table
+
 
 # TODO:
 # - compile Square correctly
@@ -87,28 +89,22 @@ class Symboltable:
 class VMWriter:
     def __init__(self, vmfile):
         self.vmfile = open(vmfile,'w')
-
-    def writePush(self, segment, index):
-        _dict = {
+        self._dict = {
             "CONST": "constant",
             "LOCAL" : "local",
             "ARG": "argument",
-            "TEMP": "temp"
+            "TEMP": "temp",
+            "STATIC": "static"
         }
+
+    def writePush(self, segment, index):
         assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
-        code = "push %s %d\n" % (_dict[segment], index)
+        code = "push %s %d\n" % (self._dict[segment], index)
         self.vmfile.write(code)
 
     def writePop(self, segment, index):
         assert segment in ["CONST","ARG","LOCAL","STATIC","THIS","THAT","POINTER","TEMP"]
-        _dict = {
-            "CONST": "constant",
-            "LOCAL" : "local",
-            "ARG": "argument",
-            "TEMP": "temp"
-        }
-
-        code = "pop %s %d\n" % (_dict[segment], index)
+        code = "pop %s %d\n" % (self._dict[segment], index)
         self.vmfile.write(code)
         
     def writeArithmetic(self, command):
