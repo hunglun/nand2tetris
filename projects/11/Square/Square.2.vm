@@ -82,9 +82,7 @@ add
 pop this 2
 call draw 0
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return
 function Square.decSize 0
@@ -104,9 +102,7 @@ sub
 pop this 2
 call draw 0
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return
 function Square.moveUp 0
@@ -153,9 +149,7 @@ push constant 1
 add
 call Screen.drawRectangle 4
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return
 function Square.moveDown 0
@@ -204,9 +198,7 @@ push this 2
 add
 call Screen.drawRectangle 4
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return
 function Square.moveLeft 0
@@ -253,9 +245,7 @@ push this 2
 add
 call Screen.drawRectangle 4
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return
 function Square.moveRight 0
@@ -304,8 +294,6 @@ push this 2
 add
 call Screen.drawRectangle 4
 pop temp 0
-goto IF_END0
 label IF_FALSE0
-label IF_END0
 push constant 0
 return

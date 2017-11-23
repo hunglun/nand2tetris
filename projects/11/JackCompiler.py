@@ -37,6 +37,7 @@
 #                              return this
 #                              update THIS in method
 #                              allocate memory in new constructor
+#                              remove redundant labels
 # TODO:
 # - compile Square correctly
 
@@ -583,14 +584,15 @@ class CompilationEngine:
         rs = rs + self.compileterminal("symbol",["{"])
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
-        self.vm.writeGoto("IF_END%d" % ifcounter)
+        if self.tn.lookahead("keyword",["else"]):
+            self.vm.writeGoto("IF_END%d" % ifcounter)
         self.vm.writeLabel("IF_FALSE%d" % ifcounter)
         if self.tn.lookahead("keyword",["else"]):
             rs = rs + self.compileterminal("keyword",["else"])
             rs = rs + self.compileterminal("symbol",["{"])
             rs = rs + self.compilestatements()
             rs = rs + self.compileterminal("symbol",["}"])
-        self.vm.writeLabel("IF_END%d" % ifcounter)
+            self.vm.writeLabel("IF_END%d" % ifcounter)
 	return "<ifStatement>\n" + rs + "</ifStatement>\n"
     def compilewhileStatement(self):
         if not self.tn.lookahead("keyword",["while"]):
