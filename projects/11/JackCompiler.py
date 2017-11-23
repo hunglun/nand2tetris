@@ -39,9 +39,11 @@
 #                              allocate memory in new constructor
 #                              remove redundant labels
 #                              add while counter
+#                              add methods to symtable class
 # TODO:
 # - compile Square correctly
-
+#   - push THIS before calling method
+#   - increment argument count by 1
 import sys,re,os,numbers
 
 class Symboltable:
@@ -54,7 +56,17 @@ class Symboltable:
             "ARG":-1,
             "VAR":-1
         }
+        self.methods = {}
+    def isMethod(self,subroutineName):
+        return subroutineName in self.methods.keys()
 
+    def getClassname(self,subroutineName):
+        if self.isMethod(subroutineName):
+            return self.methods[subroutineName]
+        else:
+            return None
+    def addMethod(self,methodName,className):
+        self.methods[methodName]=className
     def startSubroutine(self):
         self.subroutine={}
         self.indices["ARG"] = -1
@@ -716,6 +728,9 @@ class CompilationEngine:
         elif self.tn.lookahead2("symbol",["("]):
             rs = self.compilesubroutineName()
             name = self.tn.token
+            if self.symtable.isMethod(self.tn.token):
+                self.vm.writePush("POINTER", 0)
+                name = self.symtable.getClassname(self.tn.token) + "." + name
             rs = rs + self.compileterminal("symbol","(")
             _explist = self.compileexpressionList()
             rs = rs + _explist
