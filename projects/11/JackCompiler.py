@@ -38,6 +38,7 @@
 #                              update THIS in method
 #                              allocate memory in new constructor
 #                              remove redundant labels
+#                              add while counter
 # TODO:
 # - compile Square correctly
 
@@ -332,6 +333,7 @@ class CompilationEngine:
         }
         self.opsymbols = self.operators_table.keys()
         self.ifcounter = -1
+        self.whilecounter = -1
         self.nargs = 0
         self.subroutine_type = None
 
@@ -597,21 +599,24 @@ class CompilationEngine:
     def compilewhileStatement(self):
         if not self.tn.lookahead("keyword",["while"]):
             return ""
-        self.vm.writeLabel("WHILE_EXP%d" % 0) # assign a running index to label
+        self.whilecounter = self.whilecounter + 1
+        whilecounter = self.whilecounter
+
+        self.vm.writeLabel("WHILE_EXP%d" % whilecounter) # assign a running index to label
         rs = self.compileterminal("keyword",["while"])
         rs = rs + self.compileterminal("symbol",["("])
         
         _exp = self.compileexpression()
 
         self.vm.writeArithmetic("NOT")
-        self.vm.writeIf("WHILE_END%d" % 0)
+        self.vm.writeIf("WHILE_END%d" % whilecounter)
         rs = rs + _exp
         rs = rs + self.compileterminal("symbol",[")"])
         rs = rs + self.compileterminal("symbol",["{"])
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
-        self.vm.writeGoto("WHILE_EXP%d" % 0)
-        self.vm.writeLabel("WHILE_END%d" % 0) # assign a running index to label
+        self.vm.writeGoto("WHILE_EXP%d" % whilecounter)
+        self.vm.writeLabel("WHILE_END%d" % whilecounter) # assign a running index to label
 	return "<whileStatement>\n" + rs + "</whileStatement>\n"
     def compiledoStatement(self):
         if not self.tn.lookahead("keyword",["do"]):
