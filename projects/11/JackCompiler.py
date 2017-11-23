@@ -36,6 +36,7 @@
 # Fri Nov 24 06:08:05 +08 2017 use THIS for field variables
 #                              return this
 #                              update THIS in method
+#                              allocate memory in new constructor
 # TODO:
 # - compile Square correctly
 
@@ -331,7 +332,7 @@ class CompilationEngine:
         self.opsymbols = self.operators_table.keys()
         self.ifcounter = -1
         self.nargs = 0
-        self.update_this = False
+        self.subroutine_type = None
 
     def generateXml(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
@@ -411,7 +412,7 @@ class CompilationEngine:
 
         rs = "<subroutineDec>\n"
         rs = rs + self.compileterminal("keyword",["constructor","function","method"])
-        self.update_this =  (self.tn.token == "method")
+        self.subroutine_type = self.tn.token
         if self.tn.lookahead("keyword",["void","int","char","boolean"]):
             rs = rs + self.compileterminal("keyword",["void","int","char","boolean"])
         else:
@@ -506,10 +507,14 @@ class CompilationEngine:
         rs = rs + self.star(self.compilevarDec)
         nlocals = self.symtable.varCount("VAR")
         self.vm.writeFunction(self.classname + "." + self.subroutine_name, nlocals)
-        if self.update_this:
+        if self.subroutine_type == "method":
             self.vm.writePush("ARG",0)
             self.vm.writePop("POINTER",0)
-
+        if self.subroutine_type == "constructor":
+            nfields = self.symtable.varCount("FIELD")
+            self.vm.writePush("CONST", nfields)
+            self.vm.writeCall("Memory.alloc",1)
+            self.vm.writePop("POINTER", 0)
         rs = rs + self.compilestatements()
         rs = rs + self.compileterminal("symbol",["}"])
         rs = rs + "</subroutineBody>\n"
