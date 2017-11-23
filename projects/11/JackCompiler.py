@@ -33,6 +33,8 @@
 # Thu Nov 23 04:58:24 +08 2017 distinguish object subroutine
 #                              object subroutine has one implicit argument
 #                              compile Square/Main.jack successfully
+# Fri Nov 24 06:08:05 +08 2017 use THIS for field variables
+
 # TODO:
 # - compile Square correctly
 
@@ -84,7 +86,7 @@ class Symboltable:
         return self._template(name,2)
 
     def segmentOf(self, name):
-        _dict = {"VAR":"LOCAL","ARG":"ARG","STATIC":"STATIC","FIELD":"STATIC",None:None}
+        _dict = {"VAR":"LOCAL","ARG":"ARG","STATIC":"STATIC","FIELD":"THIS",None:None}
         return _dict[self.kindOf(name)]
 
 class VMWriter:
@@ -95,7 +97,8 @@ class VMWriter:
             "LOCAL" : "local",
             "ARG": "argument",
             "TEMP": "temp",
-            "STATIC": "static"
+            "STATIC": "static",
+            "THIS": 'this'
         }
 
     def writePush(self, segment, index):
@@ -379,10 +382,6 @@ class CompilationEngine:
         tn.advance()
         if tokenList:
             assert(tn.token in tokenList)
-
-
-
-                
         if tn.tokenType == "identifier":
             if declare:
                 kind = declare[0]
