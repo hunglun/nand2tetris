@@ -34,7 +34,7 @@
 #                              object subroutine has one implicit argument
 #                              compile Square/Main.jack successfully
 # Fri Nov 24 06:08:05 +08 2017 use THIS for field variables
-
+#                              return this
 # TODO:
 # - compile Square correctly
 
@@ -98,7 +98,8 @@ class VMWriter:
             "ARG": "argument",
             "TEMP": "temp",
             "STATIC": "static",
-            "THIS": 'this'
+            "THIS": 'this',
+            "POINTER": 'pointer'
         }
 
     def writePush(self, segment, index):
@@ -642,6 +643,9 @@ class CompilationEngine:
             if self.tn.token == "true":
                 self.vm.writePush("CONST",0)
                 self.vm.writeArithmetic("NOT")
+            if self.tn.token == "this":
+                self.vm.writePush("POINTER",0)
+            
         elif self.tn.lookahead2("symbol","["): 
             ( self.compilevarName()
               + self.compileterminal("symbol",["["])
