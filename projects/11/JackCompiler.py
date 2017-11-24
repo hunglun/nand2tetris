@@ -435,6 +435,9 @@ class CompilationEngine:
         _type = self.tn.token
         rs = rs + self.compileterminal("identifier",declare=["subroutine",_type])
         self.subroutine_name = self.tn.token
+        if self.subroutine_type == "method":
+            self.symtable.addMethod(self.subroutine_name, self.classname)
+        
         rs = rs + self.compileterminal("symbol",["("])
         rs = rs + self.compileparameterList()
         rs = rs + self.compileterminal("symbol",[")"])
@@ -786,3 +789,4 @@ if __name__ == "__main__":
         print ce.symtable.cls
         print "Transfer Symbol Table"
         print ce.symtable.subroutine
+        print ce.symtable.methods
