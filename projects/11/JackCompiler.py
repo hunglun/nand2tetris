@@ -40,9 +40,11 @@
 #                              remove redundant labels
 #                              add while counter
 #                              add methods to symtable class
-#                              increment method argument count by 1  
-# TODO:
-# - compile Square correctly
+#                              increment method argument count by 1
+# Sat Nov 25 05:31:21 +08 2017 add one compilation pass to populate methods in symbol table
+#                              compile Square correctly
+
+
 import sys,re,os,numbers
 
 class Symboltable:
@@ -324,10 +326,12 @@ class Tokenizer:
         tempfile.close()
 
 class CompilationEngine:
-    def __init__(self, filename):
+    def __init__(self, filename, symtable=None):
         self.filename = filename
         self.tn = Tokenizer(filename)
         self.symtable = Symboltable()
+        if symtable:
+            self.symtable.methods = symtable.methods
         self.classname = ""
         self.subroutine_name = ""
         self.operators_table = {
@@ -348,7 +352,7 @@ class CompilationEngine:
         self.nargs = 0
         self.subroutine_type = None
 
-    def generateXml(self):
+    def start(self):
         self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
 
         outfilepath = self.filename.replace(".jack",".P.xml")
@@ -782,9 +786,10 @@ if __name__ == "__main__":
     for f in jackfiles:
         tn = Tokenizer(f)
         tn.generateXml()
-        ce = CompilationEngine(f)
-#        print ce.compileClass()
-        ce.generateXml()
+        ce0 = CompilationEngine(f)
+        ce0.start()
+        ce = CompilationEngine(f,ce0.symtable)
+        ce.start()
         print "Class Symbol Table"
         print ce.symtable.cls
         print "Transfer Symbol Table"
