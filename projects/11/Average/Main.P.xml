@@ -15,21 +15,21 @@
 <varDec>
 <keyword> var </keyword>
 <identifier> Array </identifier>
-<identifier> a </identifier>['a', 'var', 'local', 'Array', 'defined', 0]
+<identifier> a </identifier>
 <symbol> ; </symbol>
 </varDec>
 <varDec>
 <keyword> var </keyword>
 <keyword> int </keyword>
-<identifier> length </identifier>['length', 'var', 'local', 'int', 'defined', 1]
+<identifier> length </identifier>
 <symbol> ; </symbol>
 </varDec>
 <varDec>
 <keyword> var </keyword>
 <keyword> int </keyword>
-<identifier> i </identifier>['i', 'var', 'local', 'int', 'defined', 2]
+<identifier> i </identifier>
 <symbol> , </symbol>
-<identifier> sum </identifier>['sum', 'var', 'local', 'int', 'defined', 3]
+<identifier> sum </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
@@ -38,21 +38,7 @@
 <identifier> length </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Keyboard </identifier>
-<symbol> . </symbol>
-<identifier> readInt </identifier>Main.readInt
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<stringConstant> How many numbers?  </stringConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -60,21 +46,7 @@
 <identifier> a </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Array </identifier>
-<symbol> . </symbol>
-<identifier> new </identifier>Main.new
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> length </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -82,24 +54,15 @@
 <identifier> i </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> i </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> length </identifier>
-</term>
-</expression>
+TRUE<symbol> &lt; </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -108,28 +71,11 @@
 <identifier> a </identifier>
 <symbol> [ </symbol>
 <expression>
-<term>
-<identifier> i </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ] </symbol>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Keyboard </identifier>
-<symbol> . </symbol>
-<identifier> readInt </identifier>Main.readInt
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<stringConstant> Enter a number:  </stringConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -137,21 +83,8 @@
 <identifier> sum </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> sum </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> a </identifier>
-<symbol> [ </symbol>
-<expression>
-<term>
-<identifier> i </identifier>
-</term>
-</expression>
-<symbol> ] </symbol>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -159,14 +92,8 @@
 <identifier> i </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> i </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -176,14 +103,11 @@
 <keyword> do </keyword>
 <identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> printString </identifier>Main.printString
+<identifier> printString </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<stringConstant> The average is  </stringConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -192,18 +116,12 @@
 <keyword> do </keyword>
 <identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> printInt </identifier>Main.printInt
+<identifier> printInt </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> sum </identifier>
-</term>
-<symbol> / </symbol>
-<term>
-<identifier> length </identifier>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>

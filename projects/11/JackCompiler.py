@@ -43,6 +43,7 @@
 #                              increment method argument count by 1
 # Sat Nov 25 05:31:21 +08 2017 add one compilation pass to populate methods in symbol table
 #                              compile Square correctly
+# Sat Nov 25 06:48:35 +08 2017 handle string expression
 
 
 import sys,re,os,numbers
@@ -359,8 +360,6 @@ class CompilationEngine:
         f = open(outfilepath,'w')
         f.write(self.compileClass())
         f.close()
-        print outfilepath,"is generated!"
-
         self.vm.close()
 
     def compileClass(self):
@@ -674,7 +673,12 @@ class CompilationEngine:
         if self.compileterminal("integerConstant"):
             self.vm.writePush("CONST",int(self.tn.token))
         elif self.compileterminal("stringConstant"):
-            pass
+            strlen = len(self.tn.token)
+            self.vm.writePush("CONST",strlen)
+            self.vm.writeCall("String.new",1)
+            for c in self.tn.token:
+                self.vm.writePush("CONST",ord(c))
+                self.vm.writeCall("String.appendChar",2)
         elif self.compileterminal("keyword",["true","false","null","this"]):
             if self.tn.token == "false":
                 self.vm.writePush("CONST",0)
