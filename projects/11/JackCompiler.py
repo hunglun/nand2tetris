@@ -40,10 +40,9 @@
 #                              remove redundant labels
 #                              add while counter
 #                              add methods to symtable class
+#                              increment method argument count by 1  
 # TODO:
 # - compile Square correctly
-#   - push THIS before calling method
-#   - increment argument count by 1
 import sys,re,os,numbers
 
 class Symboltable:
@@ -708,11 +707,11 @@ class CompilationEngine:
         return "TRUE"
     def compilesubroutineCall(self):
         rs = ""
-
         name = ""
+        implicit_arg = 0
+
         if self.tn.lookahead2("symbol",["."]):
             rs = self.compileclassName() or self.compilevarName()
-            implicit_arg = 0
             name = self.tn.token
             if self.symtable.typeOf(name):
                 segment = self.symtable.segmentOf(name)
@@ -734,10 +733,11 @@ class CompilationEngine:
             if self.symtable.isMethod(self.tn.token):
                 self.vm.writePush("POINTER", 0)
                 name = self.symtable.getClassname(self.tn.token) + "." + name
+                implicit_arg = 1
             rs = rs + self.compileterminal("symbol","(")
             _explist = self.compileexpressionList()
             rs = rs + _explist
-            self.vm.writeCall(name,self.nargs)
+            self.vm.writeCall(name,self.nargs + implicit_arg)
             rs = rs + self.compileterminal("symbol",")")
         else:
             rs = ""
