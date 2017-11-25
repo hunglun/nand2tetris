@@ -83,17 +83,13 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <letStatement>
 <keyword> let </keyword>
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Ax </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -101,10 +97,7 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Ay </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -112,10 +105,7 @@
 <identifier> leftWall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> AleftWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -123,14 +113,8 @@
 <identifier> rightWall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> ArightWall </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 6 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -138,10 +122,7 @@
 <identifier> topWall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> AtopWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -149,14 +130,8 @@
 <identifier> bottomWall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> AbottomWall </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 6 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -164,10 +139,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
@@ -182,10 +154,7 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -202,7 +171,6 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <doStatement>
 <keyword> do </keyword>
@@ -212,10 +180,7 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -238,7 +203,6 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <doStatement>
 <keyword> do </keyword>
@@ -248,10 +212,7 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -283,7 +244,6 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <doStatement>
 <keyword> do </keyword>
@@ -293,10 +253,7 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -328,7 +285,6 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <doStatement>
 <keyword> do </keyword>
@@ -338,36 +294,18 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 5 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 5 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -390,15 +328,11 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -415,19 +349,12 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 5 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -459,21 +386,14 @@
 <identifier> temp </identifier>
 <symbol> ; </symbol>
 </varDec>
-3
 <statements>
 <letStatement>
 <keyword> let </keyword>
 <identifier> lengthx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> destx </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -481,14 +401,8 @@
 <identifier> lengthy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> desty </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -496,21 +410,7 @@
 <identifier> dx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> abs </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> lengthx </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -518,21 +418,7 @@
 <identifier> dy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Math </identifier>
-<symbol> . </symbol>
-<identifier> abs </identifier>
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<identifier> lengthy </identifier>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -540,30 +426,14 @@
 <identifier> invert </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> dx </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> dy </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> invert </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -572,10 +442,7 @@
 <identifier> temp </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> dx </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -583,10 +450,7 @@
 <identifier> dx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> dy </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -594,10 +458,7 @@
 <identifier> dy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> temp </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -605,20 +466,7 @@
 <identifier> positivex </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> desty </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -626,20 +474,7 @@
 <identifier> positivey </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> destx </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -652,20 +487,7 @@
 <identifier> positivex </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> destx </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -673,20 +495,7 @@
 <identifier> positivey </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> desty </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -697,24 +506,8 @@
 <identifier> d </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> dy </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> - </symbol>
-<term>
-<identifier> dx </identifier>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -722,14 +515,8 @@
 <identifier> straightD </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> dy </identifier>
-</term>
-</expression>
+TRUE<symbol> * </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -737,24 +524,8 @@
 <identifier> diagonalD </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-<symbol> * </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> dy </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<identifier> dx </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> * </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <returnStatement>
@@ -775,7 +546,6 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
-0
 <statements>
 <doStatement>
 <keyword> do </keyword>
@@ -790,14 +560,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> d </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> &lt; </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -806,14 +570,8 @@
 <identifier> d </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> d </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> straightD </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -826,24 +584,15 @@
 <identifier> d </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> d </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> diagonalD </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> positivey </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -851,10 +600,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> invert </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -863,14 +609,8 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -883,14 +623,8 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -905,10 +639,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> invert </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -917,14 +648,8 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -937,14 +662,8 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -960,10 +679,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> positivex </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -971,10 +687,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> invert </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -983,14 +696,8 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1003,14 +710,8 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1025,10 +726,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> invert </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1037,14 +735,8 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1057,14 +749,8 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1077,23 +763,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> &gt; </symbol>
-<term>
-<identifier> leftWall </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1102,10 +772,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1113,10 +780,7 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> leftWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1126,23 +790,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> rightWall </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1151,10 +799,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1162,10 +807,7 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> rightWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1175,23 +817,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> &gt; </symbol>
-<term>
-<identifier> topWall </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1200,10 +826,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 3 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1211,10 +834,7 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> topWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1224,23 +844,7 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<identifier> bottomWall </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1249,10 +853,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1260,10 +861,7 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> bottomWall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1281,10 +879,7 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> wall </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -1317,21 +912,14 @@
 <identifier> factor </identifier>
 <symbol> ; </symbol>
 </varDec>
-5
 <statements>
 <letStatement>
 <keyword> let </keyword>
 <identifier> divLengthx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> lengthx </identifier>
-</term>
-<symbol> / </symbol>
-<term>
-<integerConstant> 10 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1339,28 +927,16 @@
 <identifier> divLengthy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> lengthy </identifier>
-</term>
-<symbol> / </symbol>
-<term>
-<integerConstant> 10 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> bouncingDirection </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1369,10 +945,7 @@
 <identifier> factor </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 10 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1384,92 +957,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> ~ </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> lengthx </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> &amp; </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> bouncingDirection </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> | </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> lengthx </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> &amp; </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> bouncingDirection </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> | </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1478,10 +967,7 @@
 <identifier> factor </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 20 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1494,10 +980,7 @@
 <identifier> factor </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 5 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1510,14 +993,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> wall </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1526,10 +1003,7 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 506 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1537,33 +1011,8 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> divLengthy </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 50 </integerConstant>
-</term>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> / </symbol>
-<term>
-<identifier> divLengthx </identifier>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1571,24 +1020,8 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> newy </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> factor </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1600,14 +1033,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> wall </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1616,10 +1043,7 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1627,24 +1051,8 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> divLengthy </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<integerConstant> 50 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> / </symbol>
-<term>
-<identifier> divLengthx </identifier>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1652,24 +1060,8 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> newy </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> factor </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1681,14 +1073,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> wall </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 3 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -1697,10 +1083,7 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 250 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1708,33 +1091,8 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> divLengthx </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 25 </integerConstant>
-</term>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> / </symbol>
-<term>
-<identifier> divLengthy </identifier>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1742,24 +1100,8 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> newx </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> factor </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1772,10 +1114,7 @@
 <identifier> newy </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1783,24 +1122,8 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> divLengthx </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<integerConstant> 25 </integerConstant>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> / </symbol>
-<term>
-<identifier> divLengthy </identifier>
-</term>
-</expression>
+TRUE<symbol> / </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -1808,24 +1131,8 @@
 <identifier> newx </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> newx </identifier>
-</term>
-<symbol> * </symbol>
-<term>
-<identifier> factor </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -1843,16 +1150,10 @@
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> newx </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> newy </identifier>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>

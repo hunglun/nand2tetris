@@ -11,3 +11,8 @@ diff Square/Square.vm Square/Square.2.vm
 
 python JackCompiler.py Average
 diff Average/Main.vm Average/Main.2.vm
+
+python JackCompiler.py Pong
+diff Pong/Main.vm Pong/Main.2.vm
+diff Pong/Bat.vm Pong/Bat.2.vm
+#diff Pong/PongGame.vm Pong/PongGame.2.vm

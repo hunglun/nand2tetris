@@ -5,49 +5,49 @@
 <classVarDec>
 <keyword> static </keyword>
 <identifier> PongGame </identifier>
-<identifier> instance </identifier>['PongGame.instance', 'var', 'static', 'PongGame', 'defined', 0]
+<identifier> instance </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <identifier> Bat </identifier>
-<identifier> bat </identifier>['PongGame.bat', 'var', 'field', 'Bat', 'defined', 1]
+<identifier> bat </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <identifier> Ball </identifier>
-<identifier> ball </identifier>['PongGame.ball', 'var', 'field', 'Ball', 'defined', 2]
+<identifier> ball </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> wall </identifier>['PongGame.wall', 'var', 'field', 'int', 'defined', 3]
+<identifier> wall </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> boolean </keyword>
-<identifier> exit </identifier>['PongGame.exit', 'var', 'field', 'boolean', 'defined', 4]
+<identifier> exit </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> score </identifier>['PongGame.score', 'var', 'field', 'int', 'defined', 5]
+<identifier> score </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> lastWall </identifier>['PongGame.lastWall', 'var', 'field', 'int', 'defined', 6]
+<identifier> lastWall </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> batWidth </identifier>['PongGame.batWidth', 'var', 'field', 'int', 'defined', 7]
+<identifier> batWidth </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <subroutineDec>
@@ -65,7 +65,7 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> clearScreen </identifier>PongGame.clearScreen
+<identifier> clearScreen </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -77,10 +77,7 @@
 <identifier> batWidth </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 50 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -88,39 +85,7 @@
 <identifier> bat </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Bat </identifier>
-<symbol> . </symbol>
-<identifier> new </identifier>PongGame.new
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<integerConstant> 230 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 229 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> batWidth </identifier>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 7 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -128,71 +93,21 @@
 <identifier> ball </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Ball </identifier>
-<symbol> . </symbol>
-<identifier> new </identifier>PongGame.new
-<symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
-<integerConstant> 253 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 222 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 511 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
-<symbol> , </symbol>
-<expression>
-<term>
-<integerConstant> 229 </integerConstant>
-</term>
-</expression>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
 <identifier> ball </identifier>
 <symbol> . </symbol>
-<identifier> setDestination </identifier>PongGame.setDestination
+<identifier> setDestination </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 400 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -201,32 +116,20 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>PongGame.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 238 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 511 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 240 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -235,20 +138,14 @@
 <keyword> do </keyword>
 <identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> moveCursor </identifier>PongGame.moveCursor
+<identifier> moveCursor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<integerConstant> 22 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -257,14 +154,11 @@
 <keyword> do </keyword>
 <identifier> Output </identifier>
 <symbol> . </symbol>
-<identifier> printString </identifier>PongGame.printString
+<identifier> printString </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<stringConstant> Score: 0 </stringConstant>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -274,10 +168,7 @@
 <identifier> exit </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -285,10 +176,7 @@
 <identifier> score </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -296,10 +184,7 @@
 <identifier> wall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -307,19 +192,13 @@
 <identifier> lastWall </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -341,7 +220,7 @@
 <keyword> do </keyword>
 <identifier> bat </identifier>
 <symbol> . </symbol>
-<identifier> dispose </identifier>PongGame.dispose
+<identifier> dispose </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -352,7 +231,7 @@
 <keyword> do </keyword>
 <identifier> ball </identifier>
 <symbol> . </symbol>
-<identifier> dispose </identifier>PongGame.dispose
+<identifier> dispose </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -363,14 +242,11 @@
 <keyword> do </keyword>
 <identifier> Memory </identifier>
 <symbol> . </symbol>
-<identifier> deAlloc </identifier>PongGame.deAlloc
+<identifier> deAlloc </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -399,16 +275,7 @@
 <identifier> instance </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> PongGame </identifier>
-<symbol> . </symbol>
-<identifier> new </identifier>PongGame.new
-<symbol> ( </symbol>
-<expressionList>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <returnStatement>
@@ -433,14 +300,525 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> instance </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
 </subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>function
+<keyword> void </keyword>
+<identifier> run </identifier>PongGame.run
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> char </keyword>
+<identifier> key </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> &amp; </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> key </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> bat </identifier>
+<symbol> . </symbol>
+<identifier> move </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> moveBall </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Sys </identifier>
+<symbol> . </symbol>
+<identifier> wait </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<identifier> bat </identifier>
+<symbol> . </symbol>
+<identifier> setDirection </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<identifier> bat </identifier>
+<symbol> . </symbol>
+<identifier> setDirection </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> exit </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> &amp; </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> key </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> bat </identifier>
+<symbol> . </symbol>
+<identifier> move </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> moveBall </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Sys </identifier>
+<symbol> . </symbol>
+<identifier> wait </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>
+<symbol> . </symbol>
+<identifier> moveCursor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+<symbol> , </symbol>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>
+<symbol> . </symbol>
+<identifier> printString </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>function
+<keyword> void </keyword>
+<identifier> moveBall </identifier>PongGame.moveBall
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<identifier> bouncingDirection </identifier>
+<symbol> , </symbol>
+<identifier> batLeft </identifier>
+<symbol> , </symbol>
+<identifier> batRight </identifier>
+<symbol> , </symbol>
+<identifier> ballLeft </identifier>
+<symbol> , </symbol>
+<identifier> ballRight </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> &amp; </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> lastWall </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bouncingDirection </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> batLeft </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> batRight </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> ballLeft </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> ballRight </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> exit </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE<symbol> | </symbol>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> &lt; </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bouncingDirection </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+TRUE<symbol> &gt; </symbol>
+TRUE</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<identifier> bouncingDirection </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> batWidth </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> bat </identifier>
+<symbol> . </symbol>
+<identifier> setWidth </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<identifier> score </identifier>
+<symbol> = </symbol>
+<expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>
+<symbol> . </symbol>
+<identifier> moveCursor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+<symbol> , </symbol>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> Output </identifier>
+<symbol> . </symbol>
+<identifier> printInt </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<identifier> ball </identifier>
+<symbol> . </symbol>
+<identifier> bounce </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+TRUE</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
 </class>

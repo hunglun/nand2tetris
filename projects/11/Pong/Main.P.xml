@@ -15,7 +15,7 @@
 <varDec>
 <keyword> var </keyword>
 <identifier> PongGame </identifier>
-<identifier> game </identifier>['Main.game', 'var', 'local', 'PongGame', 'defined', 148]
+<identifier> game </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
@@ -23,7 +23,7 @@
 <keyword> do </keyword>
 <identifier> PongGame </identifier>
 <symbol> . </symbol>
-<identifier> newInstance </identifier>Main.newInstance
+<identifier> newInstance </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -35,23 +35,14 @@
 <identifier> game </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> PongGame </identifier>
-<symbol> . </symbol>
-<identifier> getInstance </identifier>Main.getInstance
-<symbol> ( </symbol>
-<expressionList>
-</expressionList>
-<symbol> ) </symbol>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
 <identifier> game </identifier>
 <symbol> . </symbol>
-<identifier> run </identifier>Main.run
+<identifier> run </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -62,7 +53,7 @@
 <keyword> do </keyword>
 <identifier> game </identifier>
 <symbol> . </symbol>
-<identifier> dispose </identifier>Main.dispose
+<identifier> dispose </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>

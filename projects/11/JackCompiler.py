@@ -45,7 +45,7 @@
 #                              compile Square correctly
 # Sat Nov 25 06:48:35 +08 2017 handle string expression
 # Sat Nov 25 14:14:13 +08 2017 handle array
-
+#                              increment method argument index
 # TODO - compile Average
 
 import sys,re,os,numbers
@@ -76,12 +76,15 @@ class Symboltable:
         self.indices["ARG"] = -1
         self.indices["VAR"] = -1
 
-    def define(self, name, _type, kind):
+    def define(self, name, _type, kind, isMethod = False):
         assert kind in ["STATIC","FIELD","ARG","VAR"]
         self.indices[kind] = self.indices[kind] + 1
         index = self.indices[kind]
         if kind in ["ARG","VAR"]:
-            self.subroutine[name]=[_type,kind,index]
+            if isMethod and kind == "ARG":
+                self.subroutine[name]=[_type,kind,index + 1]
+            else:
+                self.subroutine[name]=[_type,kind,index]
         else:
             self.cls[name]=[_type,kind,index]
     def varCount(self, kind):
@@ -412,7 +415,7 @@ class CompilationEngine:
                 kind = declare[0]
                 _type = declare[1]
                 if kind in ["VAR","ARG","STATIC","FIELD"]:
-                    self.symtable.define(tn.token,_type,kind)
+                    self.symtable.define(tn.token,_type,kind, self.subroutine_type == "method")
             if declare and declare[0] == "subroutine":
                 name = getCurrentScope() + "." + tn.token
                 return "<%s> %s </%s>%s\n" % (tn.tokenType,tn.token,tn.tokenType,name)
@@ -814,8 +817,10 @@ if __name__ == "__main__":
         ce0.start()
         ce = CompilationEngine(f,ce0.symtable)
         ce.start()
+        print f
         print "Class Symbol Table"
         print ce.symtable.cls
         print "Transfer Symbol Table"
         print ce.symtable.subroutine
         print ce.symtable.methods
+        

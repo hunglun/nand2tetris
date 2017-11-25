@@ -5,23 +5,23 @@
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> x </identifier>['Bat.x', 'var', 'field', 'int', 'defined', 0]
+<identifier> x </identifier>
 <symbol> , </symbol>
-<identifier> y </identifier>['Bat.y', 'var', 'field', 'int', 'defined', 1]
+<identifier> y </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> width </identifier>['Bat.width', 'var', 'field', 'int', 'defined', 2]
+<identifier> width </identifier>
 <symbol> , </symbol>
-<identifier> height </identifier>['Bat.height', 'var', 'field', 'int', 'defined', 3]
+<identifier> height </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<identifier> direction </identifier>['Bat.direction', 'var', 'field', 'int', 'defined', 4]
+<identifier> direction </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <subroutineDec>
@@ -31,16 +31,16 @@
 <symbol> ( </symbol>
 <parameterList>
 <keyword> int </keyword>
-<identifier> Ax </identifier>['Bat.Ax', 'argument', 'argument', 'int', 'defined', 0]
+<identifier> Ax </identifier>
 <symbol> , </symbol>
 <keyword> int </keyword>
-<identifier> Ay </identifier>['Bat.Ay', 'var', 'argument', 'int', 'defined', 5]
+<identifier> Ay </identifier>
 <symbol> , </symbol>
 <keyword> int </keyword>
-<identifier> Awidth </identifier>['Bat.Awidth', 'var', 'argument', 'int', 'defined', 6]
+<identifier> Awidth </identifier>
 <symbol> , </symbol>
 <keyword> int </keyword>
-<identifier> Aheight </identifier>['Bat.Aheight', 'var', 'argument', 'int', 'defined', 7]
+<identifier> Aheight </identifier>
 </parameterList>
 <symbol> ) </symbol>
 <subroutineBody>
@@ -51,10 +51,7 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Ax </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -62,10 +59,7 @@
 <identifier> y </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Ay </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -73,10 +67,7 @@
 <identifier> width </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Awidth </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -84,10 +75,7 @@
 <identifier> height </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Aheight </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
@@ -95,15 +83,12 @@
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 2 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> show </identifier>Bat.show
+<identifier> show </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -113,10 +98,7 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -138,14 +120,11 @@
 <keyword> do </keyword>
 <identifier> Memory </identifier>
 <symbol> . </symbol>
-<identifier> deAlloc </identifier>Bat.deAlloc
+<identifier> deAlloc </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> this </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -173,21 +152,18 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> draw </identifier>Bat.draw
+<identifier> draw </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -217,21 +193,18 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> draw </identifier>Bat.draw
+<identifier> draw </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -261,40 +234,22 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>Bat.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> height </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -314,7 +269,7 @@
 <symbol> ( </symbol>
 <parameterList>
 <keyword> int </keyword>
-<identifier> Adirection </identifier>['Bat.Adirection', 'argument', 'argument', 'int', 'defined', 1]
+<identifier> Adirection </identifier>
 </parameterList>
 <symbol> ) </symbol>
 <subroutineBody>
@@ -325,10 +280,7 @@
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Adirection </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <returnStatement>
@@ -353,10 +305,7 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -377,14 +326,8 @@
 <returnStatement>
 <keyword> return </keyword>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -398,7 +341,7 @@
 <symbol> ( </symbol>
 <parameterList>
 <keyword> int </keyword>
-<identifier> Awidth </identifier>['Bat.Awidth', 'argument', 'argument', 'int', 'defined', 2]
+<identifier> Awidth </identifier>
 </parameterList>
 <symbol> ) </symbol>
 <subroutineBody>
@@ -406,7 +349,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<identifier> hide </identifier>Bat.hide
+<identifier> hide </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -418,15 +361,12 @@
 <identifier> width </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> Awidth </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
-<identifier> show </identifier>Bat.show
+<identifier> show </identifier>
 <symbol> ( </symbol>
 <expressionList>
 </expressionList>
@@ -456,14 +396,8 @@
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> direction </identifier>
-</term>
-<symbol> = </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> = </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -472,28 +406,16 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> &lt; </symbol>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> &lt; </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -502,10 +424,7 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 0 </integerConstant>
-</term>
-</expression>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -515,14 +434,11 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -531,64 +447,23 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>Bat.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> height </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -597,14 +472,11 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -613,40 +485,22 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>Bat.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 3 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> height </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -661,38 +515,16 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> &gt; </symbol>
-<term>
-<integerConstant> 511 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> &gt; </symbol>
+TRUE</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -701,14 +533,8 @@
 <identifier> x </identifier>
 <symbol> = </symbol>
 <expression>
-<term>
-<integerConstant> 511 </integerConstant>
-</term>
-<symbol> - </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -718,14 +544,11 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> false </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -734,44 +557,23 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>Bat.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 4 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 1 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> height </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -780,14 +582,11 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> setColor </identifier>Bat.setColor
+<identifier> setColor </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<keyword> true </keyword>
-</term>
-</expression>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -796,54 +595,23 @@
 <keyword> do </keyword>
 <identifier> Screen </identifier>
 <symbol> . </symbol>
-<identifier> drawRectangle </identifier>Bat.drawRectangle
+<identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
-<term>
-<symbol> ( </symbol>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
-<symbol> ) </symbol>
-</term>
-<symbol> - </symbol>
-<term>
-<integerConstant> 3 </integerConstant>
-</term>
-</expression>
+TRUE<symbol> - </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> width </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 <symbol> , </symbol>
 <expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<term>
-<identifier> height </identifier>
-</term>
-</expression>
+TRUE<symbol> + </symbol>
+TRUE</expression>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
