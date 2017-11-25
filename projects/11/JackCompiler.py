@@ -44,7 +44,9 @@
 # Sat Nov 25 05:31:21 +08 2017 add one compilation pass to populate methods in symbol table
 #                              compile Square correctly
 # Sat Nov 25 06:48:35 +08 2017 handle string expression
+# Sat Nov 25 14:14:13 +08 2017 handle array
 
+# TODO - compile Average
 
 import sys,re,os,numbers
 
@@ -117,6 +119,7 @@ class VMWriter:
             "TEMP": "temp",
             "STATIC": "static",
             "THIS": 'this',
+            "THAT": 'that',
             "POINTER": 'pointer'
         }
 
@@ -571,18 +574,28 @@ class CompilationEngine:
         rs = self.compileterminal("keyword",["let"])
         rs = rs + self.compilevarName()
         varname = self.tn.token
+        isArray = False
         if self.tn.lookahead("symbol",["["]):
+            isArray = True
             rs = rs + self.compileterminal("symbol","[")
-            
             rs = rs + self.compileexpression()
-
             rs = rs + self.compileterminal("symbol","]")
+            segment = self.symtable.segmentOf(varname)
+            index = self.symtable.indexOf(varname)
+            self.vm.writePush(segment,index)
+            self.vm.writeArithmetic("ADD")
         rs = rs + self.compileterminal("symbol","=")
         
         rs = rs + self.compileexpression()        
 
         rs = rs + self.compileterminal("symbol",";")
-        self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
+        if isArray:
+            self.vm.writePop("TEMP",0)
+            self.vm.writePop("POINTER",1)
+            self.vm.writePush("TEMP",0)
+            self.vm.writePop("THAT",0)
+        else:
+            self.vm.writePop(self.symtable.segmentOf(varname),self.symtable.indexOf(varname))
 	return "<letStatement>\n" + rs + "</letStatement>\n"
     def compileifStatement(self):
         if not self.tn.lookahead("keyword",["if"]):
@@ -687,12 +700,19 @@ class CompilationEngine:
                 self.vm.writeArithmetic("NOT")
             if self.tn.token == "this":
                 self.vm.writePush("POINTER",0)
-            
-        elif self.tn.lookahead2("symbol","["): 
-            ( self.compilevarName()
-              + self.compileterminal("symbol",["["])
-              + self.compileexpression()
-              + self.compileterminal("symbol",["]"]))
+        elif self.tn.lookahead2("symbol","["):
+            self.compilevarName()
+            varname = self.tn.token
+            self.compileterminal("symbol",["["])
+            self.compileexpression()
+            self.compileterminal("symbol",["]"])
+            segment = self.symtable.segmentOf(varname)
+            index = self.symtable.indexOf(varname)
+            self.vm.writePush(segment,index)
+            self.vm.writeArithmetic("ADD")
+            self.vm.writePop("POINTER",1)
+            self.vm.writePush("THAT",0)
+
         elif self.tn.lookahead("symbol","("):
             (self.compileterminal("symbol",["("])
              + self.compileexpression()
