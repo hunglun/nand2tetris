@@ -47,7 +47,7 @@
 # Sat Nov 25 14:14:13 +08 2017 handle array
 #                              increment method argument index
 #                              handle null keyword
-
+#                              completed all example programs!
 import sys,re,os,numbers
 
 class Symboltable:
@@ -360,7 +360,7 @@ class CompilationEngine:
         self.subroutine_type = None
 
     def start(self):
-        self.vm = VMWriter(self.filename.replace(".jack",".2.vm"))
+        self.vm = VMWriter(self.filename.replace(".jack",".vm"))
 
         outfilepath = self.filename.replace(".jack",".P.xml")
         f = open(outfilepath,'w')
