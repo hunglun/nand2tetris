@@ -1,3 +1,10 @@
+// EDIT HISTORY
+// Sun Nov 26 05:47:52 +08 2017 - implemented peek and poke
+
+// TODO
+// - implement alloc, deAlloc and init
+
+//
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -16,10 +23,16 @@ class Memory {
 
     /** Returns the RAM value at the given address. */
     function int peek(int address) {
+	var Array memory;
+	let memory = 0;
+	return memory[address];
     }
 
     /** Sets the RAM value at the given address to the given value. */
     function void poke(int address, int value) {
+	var Array memory;
+	let memory = 0;
+	return memory[address]=value;
     }
 
     /** Finds an available RAM block of the given size and returns
