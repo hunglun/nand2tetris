@@ -15,4 +15,7 @@ diff Average/Main.vm Average/Main.2.vm
 python JackCompiler.py Pong
 diff Pong/Main.vm Pong/Main.2.vm
 diff Pong/Bat.vm Pong/Bat.2.vm
-#diff Pong/PongGame.vm Pong/PongGame.2.vm
+diff Pong/PongGame.vm Pong/PongGame.2.vm
+
+python JackCompiler.py ComplexArrays
+diff ComplexArrays/Main.vm ComplexArrays/Main.2.vm

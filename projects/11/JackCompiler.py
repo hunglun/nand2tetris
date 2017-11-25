@@ -46,7 +46,7 @@
 # Sat Nov 25 06:48:35 +08 2017 handle string expression
 # Sat Nov 25 14:14:13 +08 2017 handle array
 #                              increment method argument index
-# TODO - compile Average
+#                              handle null keyword
 
 import sys,re,os,numbers
 
@@ -696,6 +696,8 @@ class CompilationEngine:
                 self.vm.writePush("CONST",ord(c))
                 self.vm.writeCall("String.appendChar",2)
         elif self.compileterminal("keyword",["true","false","null","this"]):
+            if self.tn.token == "null":
+                self.vm.writePush("CONST",0)
             if self.tn.token == "false":
                 self.vm.writePush("CONST",0)
             if self.tn.token == "true":
