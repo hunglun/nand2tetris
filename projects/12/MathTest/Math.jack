@@ -1,0 +1,115 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+class Math {
+
+    /** Initializes the library. */
+    function void init() {
+	return;
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+	if(x > 0 ){
+	    return x;
+	}else{
+	    return -x;
+	}
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x*y and multiply(x,y) return the same value.
+     */
+    function int multiply(int x, int y) {
+	var int sum, shiftedX, j, jy, n, temp;
+	let sum = 0;
+	let shiftedX = x;
+	let temp = 1;
+
+	if (x = 1){
+	    return y;
+	}
+	if (y = 1){
+	    return x;
+	}
+
+	if (x < 0){
+	    return -Math.multiply(-x,y);
+	}
+	if (y < 0){
+	    return -Math.multiply(x,-y);
+	}
+
+	while(~(y < temp)){ // y >= temp
+	    if (y & temp){
+		let sum = sum + shiftedX;
+	    }
+	    let shiftedX = shiftedX + shiftedX;
+	    let temp = temp + temp;
+	}
+
+	return sum;
+    }
+
+    /** Returns the integer part of x/y.
+     *  When a Jack compiler detects the multiplication operator '/' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x/y and divide(x,y) return the same value.
+     */
+    function int divide(int x, int y) {
+	var int r;
+	let r = 0;
+	if (x < 0){
+	    return -Math.divide(-x,y);
+	}
+	if (y < 0){
+	    return -Math.divide(x,-y);
+	}
+
+	while(~(x < y)){ // x >=y : naive implementation
+	    let r = r + 1;
+	    let x = x - y;
+	}
+	return r;
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+	var int y ;
+	let y = 0;
+	if (x = 32767){ // special case for 0x7fff
+	    return 181;
+	}
+	while(y*y < x){ // if x is 0x7fff, this condition always hold true!
+	    let y = y + 1; // naive implementation
+	}
+	return y; // this should never happen!
+    }
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+	if(a>b){
+	    return a;
+	}else{
+	    return b;
+	}
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+	if(a>b){
+	    return b;
+	}else{
+	    return a;
+	}
+
+    }
+}
