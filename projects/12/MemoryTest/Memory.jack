@@ -1,9 +1,10 @@
 // EDIT HISTORY
 // Sun Nov 26 05:47:52 +08 2017 - implemented peek and poke
+// - implement alloc, deAlloc and init
+// - implement naive memory management
 
 // TODO
-// - implement alloc, deAlloc and init
-
+// use linked list implementation
 //
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
@@ -21,7 +22,8 @@ class Memory {
     /** Initializes the class. */
     function void init() {
 	let memory = 0;
-	let free = memory;
+	let free = 2048; // heapbase
+	return;
     }
 
     /** Returns the RAM value at the given address. */
@@ -31,7 +33,8 @@ class Memory {
 
     /** Sets the RAM value at the given address to the given value. */
     function void poke(int address, int value) {
-	return memory[address]=value;
+	let memory[address]=value;
+	return;
     }
 
     /** Finds an available RAM block of the given size and returns
@@ -46,5 +49,6 @@ class Memory {
     /** De-allocates the given object (cast as an array) by making
      *  it available for future allocations. */
     function void deAlloc(Array o) {
+	return;
     }    
 }
