@@ -148,15 +148,6 @@ return
 function Math.sqrt 1
 push constant 0
 pop local 0
-push argument 0
-push constant 32767
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push constant 181
-return
-label IF_FALSE0
 label WHILE_EXP0
 push local 0
 push local 0
@@ -165,6 +156,15 @@ push argument 0
 lt
 not
 if-goto WHILE_END0
+push local 0
+push constant 181
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+return
+label IF_FALSE0
 push local 0
 push constant 1
 add
