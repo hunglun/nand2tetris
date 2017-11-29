@@ -67,12 +67,20 @@ class String {
 	var int i, sum;
 	let i = 0;
 	let sum = 0;
-	
+
+	if(a[0] = 45){
+	    let i = 1;
+	}
 	while(a[i] > 47 & a[i] < 58 & i < length){ // if a[i] is integer
 	    let sum = (sum * 10)  + a[i] - 48;
 	    let i = i + 1;
 	}
-	return sum;
+	if(a[0] = 45){
+	    return -sum;
+	}else{
+	    return sum;
+	}
+
     }
 
     /** Sets this string to hold a representation of the given value. */

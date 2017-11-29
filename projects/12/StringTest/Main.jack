@@ -57,12 +57,31 @@ class Main {
         do Output.printString("intValue: ");
         do Output.printInt(s.intValue());        // intValue: 456
         do Output.println();
-        
+
+        let s = "457";
+        do Output.printString("intValue: ");
+        do Output.printInt(s.intValue());        // intValue: 456
+        do Output.println();
+
         let s = "-32123";
         do Output.printString("intValue: ");
         do Output.printInt(s.intValue());        // intValue: -32123
+	do Output.println();
+        let s = "032123";
+        do Output.printString("intValue: ");
+        do Output.printInt(s.intValue());        // intValue: -32123
+ 	do Output.println();
+
+ 	let s = "-3";
+        do Output.printString("intValue: ");
+        do Output.printInt(s.intValue());        // intValue: -321
         do Output.println();
-        
+
+ 	let s = "-4";
+        do Output.printString("intValue: ");
+        do Output.printInt(s.intValue());        // intValue: -321
+        do Output.println();
+
         do Output.printString("backSpace: ");
         do Output.printInt(String.backSpace());  // backSpace: 129
         do Output.println();
