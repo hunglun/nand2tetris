@@ -76,29 +76,26 @@ class String {
     }
 
     /** Sets this string to hold a representation of the given value. */
-    method void setInt(int val) {
+    method void _setInt(int val) {
 	var int lastDigit, c;
-	if(val > 0){
-	    let lastDigit = val - ((val / 10) * 10) ;
-	}else{
-	    let lastDigit = -val - ((-val / 10) * 10) ;
-	}
+	let lastDigit = val - ((val / 10) * 10) ;
 	let c = 48 + lastDigit;
 
-	if ((val < 10 & val > 0) | (-val < 10 & -val > 0)){
-	    if (-val < 10 & -val > 0) {
-		do appendChar(45);
-	    }
+	if (val < 10){
 	    do appendChar(c);
 	}else{
-	    if(val > 0){
-		do setInt(val/10);
-	    }else{
-		do setInt(-(-val/10));
-	    }
+	    do setInt(val/10);
 	    do appendChar(c);
+	}
+	return;
+    }
 
-
+    method void setInt(int val) {
+	if (val < 0){
+	    do appendChar(45);
+	    do _setInt(-val);
+	}else{
+	    do _setInt(val);
 	}
 	return;
     }

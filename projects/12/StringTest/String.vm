@@ -123,16 +123,10 @@ goto WHILE_EXP0
 label WHILE_END0
 push local 1
 return
-function String.setInt 2
+function String._setInt 2
 push argument 0
 pop pointer 0
 push argument 1
-push constant 0
-gt
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push argument 1
 push argument 1
 push constant 10
 call Math.divide 2
@@ -140,19 +134,6 @@ push constant 10
 call Math.multiply 2
 sub
 pop local 0
-goto IF_END0
-label IF_FALSE0
-push argument 1
-neg
-push argument 1
-neg
-push constant 10
-call Math.divide 2
-push constant 10
-call Math.multiply 2
-sub
-pop local 0
-label IF_END0
 push constant 48
 push local 0
 add
@@ -160,74 +141,53 @@ pop local 1
 push argument 1
 push constant 10
 lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push local 1
+call String.appendChar 2
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push pointer 0
 push argument 1
-and
-push constant 0
-gt
-push argument 1
-neg
 push constant 10
-lt
-push argument 1
-neg
-and
+call Math.divide 2
+call String.setInt 2
+pop temp 0
+push pointer 0
+push local 1
+call String.appendChar 2
+pop temp 0
+label IF_END0
 push constant 0
-gt
-or
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
+return
+function String.setInt 0
+push argument 0
+pop pointer 0
 push argument 1
-neg
-push constant 10
-lt
-push argument 1
-neg
-and
 push constant 0
-gt
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push pointer 0
 push constant 45
 call String.appendChar 2
 pop temp 0
-label IF_FALSE2
-push pointer 0
-push local 1
-call String.appendChar 2
-pop temp 0
-goto IF_END1
-label IF_FALSE1
-push argument 1
-push constant 0
-gt
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push pointer 0
-push argument 1
-push constant 10
-call Math.divide 2
-call String.setInt 2
-pop temp 0
-goto IF_END3
-label IF_FALSE3
 push pointer 0
 push argument 1
 neg
-push constant 10
-call Math.divide 2
-neg
-call String.setInt 2
+call String._setInt 2
 pop temp 0
-label IF_END3
+goto IF_END0
+label IF_FALSE0
 push pointer 0
-push local 1
-call String.appendChar 2
+push argument 1
+call String._setInt 2
 pop temp 0
-label IF_END1
+label IF_END0
 push constant 0
 return
 function String.newLine 0
