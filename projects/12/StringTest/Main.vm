@@ -74,7 +74,6 @@ call String.new 1
 pop local 1
 push local 1
 push constant 12345
-neg
 call String.setInt 2
 pop temp 0
 push constant 8

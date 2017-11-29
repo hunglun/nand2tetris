@@ -84,13 +84,14 @@ class String {
 	if (val < 10){
 	    do appendChar(c);
 	}else{
-	    do setInt(val/10);
+	    do _setInt(val/10);
 	    do appendChar(c);
 	}
 	return;
     }
 
     method void setInt(int val) {
+	let length = 0;
 	if (val < 0){
 	    do appendChar(45);
 	    do _setInt(-val);
