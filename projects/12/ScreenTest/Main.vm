@@ -33,10 +33,10 @@ push constant 120
 push constant 210
 call Screen.drawLine 4
 pop temp 0
-push constant 110
-push constant 220
-push constant 120
-push constant 210
+push constant 0
+push constant 200
+push constant 100
+push constant 200
 call Screen.drawLine 4
 pop temp 0
 push constant 0

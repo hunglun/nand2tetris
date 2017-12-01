@@ -1,4 +1,6 @@
 // Fri Dec  1 04:21:37 +08 2017 - implemented drawPixel
+// Sat Dec  2 06:51:52 +08 2017 - draw vertical line and horizontal line
+
 
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
@@ -53,9 +55,8 @@ class Screen {
 	let a = 0;
 	let b = 0;
 	// TODO take care of 4 other cases.
-	// TODO draw vertical line
-	let dx = x2 - x1; // assume x2 > x1;
-	let dy = y2 - y1; // assume y2 > y1;
+	let dx = x2 - x1 + 1; // assume x2 > x1;
+	let dy = y2 - y1 + 1; // assume y2 > y1;
 
 	while( ~(a > dx) & ~( b > dy)){
 	    do Screen.drawPixel(x1+a, y1+b);

@@ -19,7 +19,7 @@ class Main {
 
 	do Screen.drawLine(120,110,120,210);        // horizontal line
 	
-	do Screen.drawLine(110,220,120,210);        // horizontal line
+	do Screen.drawLine(0,200,100,200);        // horizontal line
 
 
 	//        do Screen.drawLine(0,220,511,220);        // base line
