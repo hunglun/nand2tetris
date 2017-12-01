@@ -13,9 +13,16 @@ class Main {
 	do Screen.drawPixel(100,101);
 	do Screen.drawPixel(100,102);
 	do Screen.drawPixel(100,104);
-	do Screen.drawLine(110,110,110,200);        // horizontal line
-	do Screen.drawLine(110,220,110,310);        // vertical line
-//        do Screen.drawLine(0,220,511,220);        // base line
+
+	do Screen.drawLine(110,110,110,200);        // vertical line
+	do Screen.drawLine(110,220,110,254);        // vertical line
+
+	do Screen.drawLine(120,110,120,210);        // horizontal line
+	
+	do Screen.drawLine(110,220,120,210);        // horizontal line
+
+
+	//        do Screen.drawLine(0,220,511,220);        // base line
 	
         // do Screen.drawRectangle(280,90,410,220);  // house
         

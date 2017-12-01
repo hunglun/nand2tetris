@@ -32,9 +32,9 @@ class Screen {
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
 	var int m, v, p, p2;
-	let m = 16384 + (x * 32) + (y / 16);
+	let m = 16384 + (y * 32) + (x / 16);
 	let v = Memory.peek(m);
-	let p = y - ((y/16) * 16);
+	let p = x - ((x/16) * 16);
 	// (v & ~(2^p)) + 2^p
 	let p2 = 1;
 	while(p > 0){
