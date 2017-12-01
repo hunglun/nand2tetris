@@ -1,10 +1,15 @@
 function Screen.init 0
 push constant 0
+not
+pop static 0
+push constant 0
 return
 function Screen.clearScreen 0
 push constant 0
 return
 function Screen.setColor 0
+push argument 0
+pop static 0
 push constant 0
 return
 function Screen.drawPixel 4
@@ -47,6 +52,10 @@ sub
 pop local 2
 goto WHILE_EXP0
 label WHILE_END0
+push static 0
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push local 1
 push local 3
 not
@@ -54,6 +63,14 @@ and
 push local 3
 add
 pop local 1
+goto IF_END0
+label IF_FALSE0
+push local 1
+push local 3
+not
+and
+pop local 1
+label IF_END0
 push local 0
 push local 1
 call Memory.poke 2

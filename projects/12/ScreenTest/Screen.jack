@@ -2,7 +2,7 @@
 // Sat Dec  2 06:51:52 +08 2017 - draw vertical line and horizontal line
 //                              - handle negative dx and dy in drawLine
 //                              - drawRectangle
-
+//                              - setColor
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -15,9 +15,10 @@
  * the screen is indexed (0,0).
  */
 class Screen {
-
+    static boolean color;
     /** Initializes the Screen. */
     function void init() {
+	let color = true;
 	return;
     }
 
@@ -29,6 +30,7 @@ class Screen {
     /** Sets the current color, to be used for all subsequent drawXXX commands.
      *  Black is represented by true, white by false. */
     function void setColor(boolean b) {
+	let color = b;
 	return;
     }
 
@@ -45,7 +47,11 @@ class Screen {
 	    let p = p - 1;
 	}
 	// 2 ^ p
-	let v = (v & (~p2)) + p2;
+	if (color){
+	    let v = (v & (~p2)) + p2;
+	}else{
+	    let v = v & (~p2);
+	}
 	do Memory.poke(m,v);
 	return;
     }
