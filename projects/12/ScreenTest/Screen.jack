@@ -4,6 +4,7 @@
 //                              - drawRectangle
 //                              - setColor
 //                              - optimise drawline
+//                              - drawCircle
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -102,6 +103,16 @@ class Screen {
 
     /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
     function void drawCircle(int x, int y, int r) {
+	var int dy,x1,x2,y1,y2;
+	let dy = -r;
+	while(dy < r){
+	    let x1 = x - Math.sqrt((r*r) - (dy * dy));
+	    let y1 = y + dy;
+	    let x2 = x + Math.sqrt((r*r) - (dy * dy));
+	    let y2 = y + dy;
+	    do Screen.drawLine(x1,y1,x2,y2);
+	    let dy = dy + 1;
+	}
 	return;
     }
 }
