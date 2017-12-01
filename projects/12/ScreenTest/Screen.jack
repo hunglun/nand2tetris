@@ -3,6 +3,7 @@
 //                              - handle negative dx and dy in drawLine
 //                              - drawRectangle
 //                              - setColor
+//                              - optimise drawline
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -58,7 +59,8 @@ class Screen {
 
     /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
     function void drawLine(int x1, int y1, int x2, int y2) {
-	var int a,b,dx,dy,tmp;
+	var int a,b,dx,dy,adyMinusbdx;
+	let adyMinusbdx = 0;
 	let a = 0;
 	let b = 0;
 	let dx = x2 - x1 + 1; // assume x2 > x1;
@@ -69,10 +71,12 @@ class Screen {
 	}
 	while( ~(a > dx) & ~( b > dy)){
 	    do Screen.drawPixel(x1+a, y1+b);
-	    if ((a * dy) < (b * dx)){
+	    if (adyMinusbdx < 0){
 		let a = a + 1;
+		let adyMinusbdx = adyMinusbdx + dy;
 	    }else{
 		let b = b + 1;
+		let adyMinusbdx = adyMinusbdx - dx;
 	    }
 	}
 	return;

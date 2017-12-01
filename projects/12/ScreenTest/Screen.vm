@@ -79,6 +79,8 @@ push constant 0
 return
 function Screen.drawLine 5
 push constant 0
+pop local 4
+push constant 0
 pop local 0
 push constant 0
 pop local 1
@@ -131,12 +133,8 @@ push local 1
 add
 call Screen.drawPixel 2
 pop temp 0
-push local 0
-push local 3
-call Math.multiply 2
-push local 1
-push local 2
-call Math.multiply 2
+push local 4
+push constant 0
 lt
 if-goto IF_TRUE1
 goto IF_FALSE1
@@ -145,12 +143,20 @@ push local 0
 push constant 1
 add
 pop local 0
+push local 4
+push local 3
+add
+pop local 4
 goto IF_END1
 label IF_FALSE1
 push local 1
 push constant 1
 add
 pop local 1
+push local 4
+push local 2
+sub
+pop local 4
 label IF_END1
 goto WHILE_EXP0
 label WHILE_END0
