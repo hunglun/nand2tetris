@@ -77,6 +77,23 @@ sub
 push constant 1
 add
 pop local 3
+push local 2
+push constant 0
+lt
+push local 3
+push constant 0
+lt
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 2
+push argument 3
+push argument 0
+push argument 1
+call Screen.drawLine 4
+pop temp 0
+label IF_FALSE0
 label WHILE_EXP0
 push local 0
 push local 2
@@ -104,25 +121,61 @@ push local 1
 push local 2
 call Math.multiply 2
 lt
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
 push local 0
 push constant 1
 add
 pop local 0
-goto IF_END0
-label IF_FALSE0
+goto IF_END1
+label IF_FALSE1
 push local 1
 push constant 1
 add
 pop local 1
-label IF_END0
+label IF_END1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Screen.drawRectangle 0
+function Screen.drawRectangle 2
+push argument 1
+push argument 3
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+pop local 0
+push argument 3
+pop local 1
+goto IF_END0
+label IF_FALSE0
+push argument 3
+pop local 0
+push argument 1
+pop local 1
+label IF_END0
+label WHILE_EXP0
+push local 0
+push local 1
+eq
+not
+not
+if-goto WHILE_END0
+push argument 0
+push local 0
+push argument 2
+push local 0
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return
 function Screen.drawCircle 0

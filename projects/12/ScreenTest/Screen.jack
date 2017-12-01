@@ -1,6 +1,7 @@
 // Fri Dec  1 04:21:37 +08 2017 - implemented drawPixel
 // Sat Dec  2 06:51:52 +08 2017 - draw vertical line and horizontal line
-
+//                              - handle negative dx and dy in drawLine
+//                              - drawRectangle
 
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
@@ -54,10 +55,12 @@ class Screen {
 	var int a,b,dx,dy,tmp;
 	let a = 0;
 	let b = 0;
-	// TODO take care of 4 other cases.
 	let dx = x2 - x1 + 1; // assume x2 > x1;
 	let dy = y2 - y1 + 1; // assume y2 > y1;
 
+	if ((dx < 0) | (dy < 0)){
+	    do Screen.drawLine(x2,y2,x1,y1);
+	}
 	while( ~(a > dx) & ~( b > dy)){
 	    do Screen.drawPixel(x1+a, y1+b);
 	    if ((a * dy) < (b * dx)){
@@ -72,6 +75,18 @@ class Screen {
     /** Draws a filled rectangle whose top left corner is (x1, y1)
      * and bottom right corner is (x2,y2), using the current color. */
     function void drawRectangle(int x1, int y1, int x2, int y2) {
+	var int y,maxy;
+	if (y1 < y2){
+	    let y = y1;
+	    let maxy = y2;
+	}else{
+	    let y = y2;
+	    let maxy = y1;
+	}
+	while(~(y = maxy)){
+	    do Screen.drawLine(x1,y,x2,y);
+	    let y = y + 1;
+	}
 	return;
     }
 
