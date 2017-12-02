@@ -1578,6 +1578,59 @@ function Output.printString 0
 push constant 0
 return
 function Output.printInt 0
+push argument 0
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 45
+call Output.printChar 1
+pop temp 0
+push argument 0
+neg
+call Output.printInt 1
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push argument 0
+push constant 10
+lt
+push argument 0
+push constant 1
+neg
+gt
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push argument 0
+push constant 48
+add
+call Output.printChar 1
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push argument 0
+push constant 10
+call Math.divide 2
+call Output.printInt 1
+pop temp 0
+push argument 0
+push argument 0
+push constant 10
+call Math.divide 2
+push constant 10
+call Math.multiply 2
+sub
+pop argument 0
+push argument 0
+push constant 48
+add
+call Output.printChar 1
+pop temp 0
+label IF_END1
+label IF_END0
 push constant 0
 return
 function Output.println 0
