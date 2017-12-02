@@ -1572,7 +1572,27 @@ call Output.moveCursor 2
 pop temp 0
 push constant 0
 return
-function Output.printString 0
+function Output.printString 1
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push argument 0
+call String.length 1
+lt
+not
+if-goto WHILE_END0
+push argument 0
+push local 0
+call String.charAt 2
+call Output.printChar 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return
 function Output.printInt 0
