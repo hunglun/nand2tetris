@@ -1481,9 +1481,9 @@ push that 0
 return
 function Output.moveCursor 0
 push argument 0
-pop static 1
-push argument 1
 pop static 2
+push argument 1
+pop static 1
 push constant 0
 return
 function Output.checkbit 1
@@ -1564,10 +1564,10 @@ add
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
+push static 2
 push static 1
 push constant 9
 add
-push static 2
 call Output.moveCursor 2
 pop temp 0
 push constant 0
@@ -1652,19 +1652,19 @@ label IF_END0
 push constant 0
 return
 function Output.println 0
-push constant 0
 push static 2
 push constant 12
 add
+push constant 0
 call Output.moveCursor 2
 pop temp 0
 push constant 0
 return
 function Output.backSpace 0
+push static 2
 push static 1
 push constant 9
 sub
-push static 2
 call Output.moveCursor 2
 pop temp 0
 push constant 0
