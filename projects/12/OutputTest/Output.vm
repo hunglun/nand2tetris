@@ -1540,9 +1540,8 @@ if-goto WHILE_END1
 push local 3
 push local 2
 call Output.checkbit 2
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
+call Screen.setColor 1
+pop temp 0
 push static 1
 push local 2
 add
@@ -1551,7 +1550,6 @@ push local 1
 add
 call Screen.drawPixel 2
 pop temp 0
-label IF_FALSE0
 push local 2
 push constant 1
 add
@@ -1644,7 +1642,7 @@ push constant 0
 return
 function Output.backSpace 0
 push static 1
-push constant 1
+push constant 9
 sub
 push static 2
 call Output.moveCursor 2

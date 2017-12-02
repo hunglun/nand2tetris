@@ -211,9 +211,9 @@ class Output {
 	while(rindex < 11 ) {
 	    let r = cmap[rindex];
 	    while(cindex < 8){
-		if (Output.checkbit(r,cindex)){
-		    do Screen.drawPixel(x+cindex,y+rindex);
-		}
+		do Screen.setColor(Output.checkbit(r,cindex));
+		do Screen.drawPixel(x+cindex,y+rindex);
+
 		let cindex = cindex + 1;
 	    }
 	    let cindex = 0;
