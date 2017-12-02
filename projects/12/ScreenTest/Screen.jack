@@ -5,6 +5,7 @@
 //                              - setColor
 //                              - optimise drawline
 //                              - drawCircle
+//                              - draw Diagonal line
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -67,9 +68,50 @@ class Screen {
 	let dx = x2 - x1 + 1; // assume x2 > x1;
 	let dy = y2 - y1 + 1; // assume y2 > y1;
 
-	if ((dx < 0) | (dy < 0)){
-	    do Screen.drawLine(x2,y2,x1,y1);
+	if ((dx < 0) & (dy > 0)){
+	    while( ~(a > -dx) & ~( b > dy)){
+		do Screen.drawPixel(x1-a, y1+b);
+		if (adyMinusbdx < 0){
+		    let a = a + 1;
+		    let adyMinusbdx = adyMinusbdx + dy;
+		}else{
+		    let b = b + 1;
+		    let adyMinusbdx = adyMinusbdx - (-dx);
+		}
+	    }
+	    return;
 	}
+
+	if ((dx > 0) & (dy < 0)){
+	    while( ~(a > dx) & ~( b > -dy)){
+		do Screen.drawPixel(x1+a, y1-b);
+		if (adyMinusbdx < 0){
+		    let a = a + 1;
+		    let adyMinusbdx = adyMinusbdx + (-dy);
+		}else{
+		    let b = b + 1;
+		    let adyMinusbdx = adyMinusbdx - dx;
+		}
+	    }
+	    return;
+
+	}
+
+	if ((dx < 0) & (dy < 0)){
+	    while( ~(a > -dx) & ~( b > -dy)){
+		do Screen.drawPixel(x1-a, y1-b);
+		if (adyMinusbdx < 0){
+		    let a = a + 1;
+		    let adyMinusbdx = adyMinusbdx + (-dy);
+		}else{
+		    let b = b + 1;
+		    let adyMinusbdx = adyMinusbdx - (-dx);
+		}
+	    }
+	    return;
+
+	}
+
 	while( ~(a > dx) & ~( b > dy)){
 	    do Screen.drawPixel(x1+a, y1+b);
 	    if (adyMinusbdx < 0){
