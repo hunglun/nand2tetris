@@ -2,6 +2,7 @@
 //                              - implemented printInt
 //                              - implemented printString
 //                              - implemented A
+//                              - fixed moveCursor anomaly
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -182,11 +183,16 @@ class Output {
         return charMaps[c];
     }
 
+    function void movePixel(int i, int j) {
+	let y = i;
+	let x = j;
+	return;
+    }
     /** Moves the cursor to the j-th column of the i-th row,
      *  and erases the character displayed there. */
     function void moveCursor(int i, int j) {
-	let y = i;
-	let x = j;
+	let y = i *11;
+	let x = j *8;
 	return;
     }
 
@@ -220,7 +226,7 @@ class Output {
 	    let cindex = 0;
 	    let rindex = rindex + 1;
 	}
-	do Output.moveCursor(y,x+9);
+	do Output.movePixel(y,x+9);
 	return;
     }
 
@@ -256,13 +262,13 @@ class Output {
 
     /** Advances the cursor to the beginning of the next line. */
     function void println() {
-	do Output.moveCursor(y + 12,0);
+	do Output.movePixel(y + 12,0);
 	return;
     }
 
     /** Moves the cursor one column back. */
     function void backSpace() {
-	do Output.moveCursor(y,x-9);
+	do Output.movePixel(y,x-9);
 	return;
     }
 }

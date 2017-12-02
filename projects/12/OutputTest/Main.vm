@@ -27,6 +27,10 @@ pop temp 0
 push constant 68
 call Output.printChar 1
 pop temp 0
+push constant 0
+push constant 0
+call Output.moveCursor 2
+pop temp 0
 push constant 65
 call Output.printChar 1
 pop temp 0

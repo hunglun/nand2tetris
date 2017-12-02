@@ -1479,10 +1479,21 @@ add
 pop pointer 1
 push that 0
 return
-function Output.moveCursor 0
+function Output.movePixel 0
 push argument 0
 pop static 2
 push argument 1
+pop static 1
+push constant 0
+return
+function Output.moveCursor 0
+push argument 0
+push constant 11
+call Math.multiply 2
+pop static 2
+push argument 1
+push constant 8
+call Math.multiply 2
 pop static 1
 push constant 0
 return
@@ -1568,7 +1579,7 @@ push static 2
 push static 1
 push constant 9
 add
-call Output.moveCursor 2
+call Output.movePixel 2
 pop temp 0
 push constant 0
 return
@@ -1656,7 +1667,7 @@ push static 2
 push constant 12
 add
 push constant 0
-call Output.moveCursor 2
+call Output.movePixel 2
 pop temp 0
 push constant 0
 return
@@ -1665,7 +1676,7 @@ push static 2
 push static 1
 push constant 9
 sub
-call Output.moveCursor 2
+call Output.movePixel 2
 pop temp 0
 push constant 0
 return
